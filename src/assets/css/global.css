@@ -1,0 +1,41 @@
+
+/* Theme Common Element List */
+/* ............................ */
+
+/* Colors:: */
+/* ========= */
+/* Primary Light Color: #615DFA // rgb(97,93,250) */
+/* Primary Dark Color: #5854EF // rgb(88,84,239) */
+/* Messenger Color: #5EDFFF // rgb(94,223,255) */
+
+/* Fonts:: */
+/* ======== */
+/* Primary Font: Roboto */
+
+/* ----------------------------------------------------------------------- */
+
+/* ============
+CSS Variable 
+=============*/
+:root {
+	--tplc:  #615DFA;
+	--tpdc:  #5854EF;
+	--tpff: "Roboto, Sans-serif";
+}
+
+/* ====================
+Theme Common Styles 
+======================*/
+.theme-primary-lt-bg {
+	background-color: var(--tplc);
+	font-family: var(--tpff);
+	color: #fff;
+	font-weight: 600;
+}
+
+.theme-primary-drk-bg {
+	background-color: var(--tpdc);
+	font-family: var(--tpff);
+	color: #fff;
+	font-weight: 600;
+}
