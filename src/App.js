@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/css/global.css';
 import Header from './Components/Shared/Header/Header';
 
 function App() {
