@@ -20,6 +20,7 @@ CSS Variable
 :root {
 	--tplc:  #615DFA;
 	--tpdc:  #5854EF;
+	--mplc: #5EDFFF;
 	--tpff: "Roboto, Sans-serif";
 }
 
@@ -33,8 +34,19 @@ Theme Common Styles
 	font-weight: 600;
 }
 
+.theme-primary-lt-text {
+	color: var(--tplc);
+}
+
 .theme-primary-drk-bg {
 	background-color: var(--tpdc);
+	font-family: var(--tpff);
+	color: #fff;
+	font-weight: 600;
+}
+
+.messenger-primary-lt-bg {
+	background-color: var(--mplc);
 	font-family: var(--tpff);
 	color: #fff;
 	font-weight: 600;

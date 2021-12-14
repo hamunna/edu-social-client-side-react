@@ -9,12 +9,15 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import ForumIcon from '@mui/icons-material/Forum';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import { Button, CssBaseline, Divider, List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
 
 // Search Functionalities
 const Search = styled('div')(({ theme }) => ({
@@ -155,9 +158,70 @@ const Header = () => {
 		</Menu>
 	);
 
+	// Swipeable Drawer Codes
+	const [state, setState] = React.useState({
+		left: false
+	});
+
+	const toggleDrawer = (anchor, open) => (event) => {
+		if (
+			event &&
+			event.type === 'keydown' &&
+			(event.key === 'Tab' || event.key === 'Shift')
+		) {
+			return;
+		}
+
+		setState({ ...state, [anchor]: open });
+	};
+
+
+	const list = (anchor) => (
+		<Box
+			sx={{ width: 300, borderRight: '2px solid #5854EF', height: '100%' }}
+			role="presentation"
+			onClick={toggleDrawer(anchor, false)}
+			onKeyDown={toggleDrawer(anchor, false)}
+		>
+			<Toolbar className="theme-primary-drk-bg" sx={{ height: 72 }}>
+
+				<Typography sx={{ fontSize: 26, fontWeight: 700, margin: 'auto' }}>
+					<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
+					<span style={{ color: '#ccc' }}>Social</span>
+				</Typography>
+
+			</Toolbar>
+
+			<List>
+				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+					<ListItem button key={text}>
+						<ListItemIcon>
+							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+						</ListItemIcon>
+						<ListItemText primary={text} />
+					</ListItem>
+				))}
+			</List>
+			<Divider />
+			<List>
+				{['All mail', 'Trash', 'Spam'].map((text, index) => (
+					<ListItem button key={text}>
+						<ListItemIcon>
+							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+						</ListItemIcon>
+						<ListItemText primary={text} />
+					</ListItem>
+				))}
+			</List>
+		</Box>
+	);
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="">
+
+			{/* <CssBaseline /> */}
+
+			<AppBar position="fixed">
 				<Toolbar className="theme-primary-lt-bg">
 
 					<Box sx={{ position: 'relative', left: -24, top: 0 }} className="theme-primary-drk-bg">
@@ -166,31 +230,55 @@ const Header = () => {
 							edge="center"
 							color="inherit"
 							aria-label="open drawer"
-							sx={{ height: 64, width: 80}}
+							sx={{ height: 72, width: 80 }}
 						>
-							<MenuIcon />
+
+							<div>
+								{['left'].map((anchor) => (
+									<React.Fragment key={anchor}>
+										<Button onClick={toggleDrawer(anchor, true)}>
+											<WidgetsIcon sx={{ color: 'white' }} />
+
+										</Button>
+
+										<SwipeableDrawer
+											anchor={anchor}
+											open={state[anchor]}
+											onClose={toggleDrawer(anchor, false)}
+											onOpen={toggleDrawer(anchor, true)}
+										>
+
+											{list(anchor)}
+
+										</SwipeableDrawer>
+									</React.Fragment>
+								))}
+							</div>
 						</IconButton>
 					</Box>
 
 					<Typography
-						variant="h6"
 						noWrap
 						component="div"
-						sx={{ display: { xs: 'none', sm: 'block' } }}
+						sx={{ display: { xs: 'none', sm: 'block', fontSize: 26, fontWeight: 700, margin: 'auto' } }}
 					>
-						MUI
+						<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
+						<span style={{ color: '#ccc' }}>Social</span>
 					</Typography>
 
-					<Search>
+					<Search sx={{ mx: 'auto' }}>
 						<SearchIconWrapper>
 							<SearchIcon />
 						</SearchIconWrapper>
 						<StyledInputBase
 							placeholder="Search…"
 							inputProps={{ 'aria-label': 'search' }}
+							sx={{ width: '60vw' }}
 						/>
 					</Search>
+
 					<Box sx={{ flexGrow: 1 }} />
+
 					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 						<IconButton size="large" aria-label="show 4 new mails" color="inherit">
 							<Badge badgeContent={4} color="error">
@@ -218,6 +306,7 @@ const Header = () => {
 							<AccountCircle />
 						</IconButton>
 					</Box>
+
 					<Box sx={{ display: { xs: 'flex', md: 'none' } }}>
 						<IconButton
 							size="large"
@@ -228,6 +317,18 @@ const Header = () => {
 							color="inherit"
 						>
 							<MoreIcon />
+						</IconButton>
+					</Box>
+
+					<Box sx={{ position: 'relative', right: -24, top: 0 }} className="messenger-primary-lt-bg">
+						<IconButton
+							size="large"
+							edge="center"
+							color="inherit"
+							aria-label="open drawer"
+							sx={{ height: 72, width: 80 }}
+						>
+							<ForumIcon />
 						</IconButton>
 					</Box>
 				</Toolbar>
