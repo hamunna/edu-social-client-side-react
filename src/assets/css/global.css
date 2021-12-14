@@ -51,3 +51,13 @@ Theme Common Styles
 	color: #fff;
 	font-weight: 600;
 }
+
+/* Global Styles */
+
+* {
+	font-family: 'Roboto';
+}
+
+body {
+	background-color: #f2f2f2;
+}

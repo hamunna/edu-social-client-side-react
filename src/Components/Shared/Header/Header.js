@@ -178,12 +178,12 @@ const Header = () => {
 
 	const list = (anchor) => (
 		<Box
-			sx={{ width: 300, borderRight: '2px solid #5854EF', height: '100%' }}
+			sx={{ width: 270, borderRight: '2px solid #5854EF', height: '100%' }}
 			role="presentation"
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
-			<Toolbar className="theme-primary-drk-bg" sx={{ height: 72 }}>
+			<Toolbar className="theme-primary-drk-bg" sx={{ height: 80 }}>
 
 				<Typography sx={{ fontSize: 26, fontWeight: 700, margin: 'auto' }}>
 					<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
@@ -230,14 +230,14 @@ const Header = () => {
 							edge="center"
 							color="inherit"
 							aria-label="open drawer"
-							sx={{ height: 72, width: 80 }}
+							sx={{ height: 80, width: 100 }}
 						>
 
 							<div>
 								{['left'].map((anchor) => (
 									<React.Fragment key={anchor}>
 										<Button onClick={toggleDrawer(anchor, true)}>
-											<WidgetsIcon sx={{ color: 'white' }} />
+											<WidgetsIcon sx={{ color: 'white', fontSize: 30 }} />
 
 										</Button>
 
@@ -326,9 +326,9 @@ const Header = () => {
 							edge="center"
 							color="inherit"
 							aria-label="open drawer"
-							sx={{ height: 72, width: 80 }}
+							sx={{ height: 80, width: 100 }}
 						>
-							<ForumIcon />
+							<ForumIcon sx={{fontSize: 36}} />
 						</IconButton>
 					</Box>
 				</Toolbar>
