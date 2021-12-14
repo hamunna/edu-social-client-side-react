@@ -7,7 +7,7 @@ import RecentBlogsWidget from '../RecentBlogsWidget/RecentBlogsWidget';
 const RightSideBar = () => {
 	return (
 
-		<Box gridColumn="span 4" sx={{ p: 2 }}>
+		<>
 
 			<FriendsWidget />
 			
@@ -15,7 +15,7 @@ const RightSideBar = () => {
 
 			<RecentBlogsWidget />
 
-		</Box>
+		</>
 
 	);
 };

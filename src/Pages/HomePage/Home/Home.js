@@ -1,5 +1,6 @@
 import { Box, Container } from '@mui/material';
 import React from 'react';
+import PostBox from '../../../Components/Shared/PostBlock/PostBox/PostBox';
 import RightSideBar from '../../../Components/Shared/SideBar/RightSideBar/RightSideBar';
 
 const Home = () => {
@@ -12,15 +13,14 @@ const Home = () => {
 					{/* Left & Main Side */}
 					<Box gridColumn="span 8" sx={{ p: 2 }}>
 
-						<Box sx={{backgroundColor: '#fff', borderRadius: 2}}>
-							<h1>Left & Main Side</h1>
-						</Box>
+						<PostBox />
 
 					</Box>
 
-
 					{/* Right Side */}
-					<RightSideBar />
+					<Box gridColumn="span 4" sx={{ p: 2 }}>
+						<RightSideBar />
+					</Box>
 
 				</Box>
 			</Container>

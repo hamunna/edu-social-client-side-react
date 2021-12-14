@@ -219,8 +219,6 @@ const Header = () => {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 
-			{/* <CssBaseline /> */}
-
 			<AppBar position="fixed">
 				<Toolbar className="theme-primary-lt-bg">
 
@@ -328,7 +326,7 @@ const Header = () => {
 							aria-label="open drawer"
 							sx={{ height: 80, width: 100 }}
 						>
-							<ForumIcon sx={{fontSize: 36}} />
+							<ForumIcon sx={{ fontSize: 36 }} />
 						</IconButton>
 					</Box>
 				</Toolbar>
