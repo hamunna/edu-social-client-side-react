@@ -13,19 +13,6 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-const primary = {
-	50: '#F0F7FF',
-	100: '#C2E0FF',
-	200: '#80BFFF',
-	300: '#66B2FF',
-	400: '#3399FF',
-	500: '#007FFF',
-	600: '#0072E5',
-	700: '#0059B2',
-	800: '#004C99',
-	900: '#003A75',
-};
-
 const Tab = styled(TabUnstyled)`
 	color: #333;
 	cursor: pointer;
@@ -53,8 +40,6 @@ const Tab = styled(TabUnstyled)`
 	&.${buttonUnstyledClasses.focusVisible} {
 	  color: #5854EF;
 	  outline: none;
-	  /* background-color: ${primary[600]}; */
-	  /* border-bottom: 2px solid ${primary[600]}; */
 	}
   
 	&.${tabUnstyledClasses.selected} {
@@ -73,11 +58,7 @@ const TabPanel = styled(TabPanelUnstyled)`
   `;
 
 const TabsList = styled(TabsListUnstyled)`
-	/* background-color: ${primary[500]}; */
-	/* border-radius: 8px; */
-	/* box-shadow: 0 20px 25px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.02); */
-	/* padding: 0 10px 0 10px; */
-	margin-bottom: 10px;
+		margin-bottom: 10px;
 	display: flex;
 	align-content: center;
 	justify-content: space-between;
@@ -88,9 +69,9 @@ const PostBoxNavigator = () => {
 		<Box sx={{ pt: 0 }}>
 			<TabsUnstyled defaultValue={0}>
 				<TabsList>
-					<Tab sx={{borderRight: '1px dotted #333'}}><PostAddIcon sx={{mr: 1}} /> Status</Tab>
-					<Tab sx={{borderRight: '1px dotted #333'}}><AddPhotoAlternateIcon sx={{mr: 1}} /> Photo/Video Album</Tab>
-					<Tab><MenuBookIcon sx={{mr: 1}} /> Blog</Tab>
+					<Tab sx={{ borderRight: '1px dotted #333' }}><PostAddIcon sx={{ mr: 1 }} /> Status</Tab>
+					<Tab sx={{ borderRight: '1px dotted #333' }}><AddPhotoAlternateIcon sx={{ mr: 1 }} /> Photo/Video Album</Tab>
+					<Tab><MenuBookIcon sx={{ mr: 1 }} /> Blog</Tab>
 				</TabsList>
 
 				<TabPanel value={0}><StatusEditor /></TabPanel>

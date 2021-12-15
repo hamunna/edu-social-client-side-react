@@ -60,8 +60,8 @@ const FeedTextOneImgPost = () => {
 
 			<CardMedia
 				component="img"
-				height="194"
-				image="/static/images/cards/paella.jpg"
+				// height="194"
+				image="https://wallpaperaccess.com/full/1191312.jpg"
 				alt="Paella dish"
 			/>
 
@@ -82,6 +82,8 @@ const FeedTextOneImgPost = () => {
 				>
 					<ExpandMoreIcon />
 				</ExpandMore>
+				<Typography sx={{textAlign: 'right'}}>Comments </Typography>
+
 				
 			</CardActions>
 
