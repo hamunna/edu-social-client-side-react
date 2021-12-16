@@ -18,6 +18,9 @@ import ForumIcon from '@mui/icons-material/Forum';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import { Button, CssBaseline, Divider, List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
+import FeedIcon from '@mui/icons-material/Feed';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Link, NavLink } from 'react-router-dom';
 
 // Search Functionalities
 const Search = styled('div')(({ theme }) => ({
@@ -175,6 +178,11 @@ const Header = () => {
 		setState({ ...state, [anchor]: open });
 	};
 
+	const linkStyle = {
+		textDecoration: 'none',
+		color: '#000',
+		fontWeight: 700,
+	}
 
 	const list = (anchor) => (
 		<Box
@@ -193,25 +201,28 @@ const Header = () => {
 			</Toolbar>
 
 			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
-				))}
+
+				<ListItem style={linkStyle} as={Link} to="profile" button>
+					<ListItemIcon>
+						<AccountCircleIcon />
+					</ListItemIcon>
+
+					<ListItemText>Profile</ListItemText>
+				</ListItem>
+
+				<ListItem style={linkStyle} as={Link} to="/" button key={'newsFeed'}>
+					<ListItemIcon>
+						<FeedIcon />
+					</ListItemIcon>
+
+					<ListItemText>News Feed</ListItemText>
+				</ListItem>
+
 			</List>
 			<Divider />
 			<List>
-				{['All mail', 'Trash', 'Spam'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
-				))}
+
+
 			</List>
 		</Box>
 	);
@@ -278,11 +289,14 @@ const Header = () => {
 					<Box sx={{ flexGrow: 1 }} />
 
 					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+
 						<IconButton size="large" aria-label="show 4 new mails" color="inherit">
 							<Badge badgeContent={4} color="error">
 								<MailIcon />
 							</Badge>
 						</IconButton>
+
+
 						<IconButton
 							size="large"
 							aria-label="show 17 new notifications"

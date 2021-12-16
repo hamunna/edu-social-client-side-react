@@ -1,6 +1,7 @@
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Box, Button, Checkbox, FormControlLabel, Link, TextField, Typography } from '@mui/material';
 import React from 'react';
+import loginBg from '../../images/login-bg.png'
 
 const Login = () => {
 	return (
@@ -48,8 +49,8 @@ const Login = () => {
 			</Box>
 
 			{/* Right Side */}
-			<Box gridColumn="span 6" sx={{ p: 2 }}>
-				<img style={{ height: '650px', width: '100%' }} src="https://image.freepik.com/free-vector/business-leader-standing-arrow-holding-flag-flat-vector-illustration-cartoon-people-training-doing-business-plan-leadership-victory-challenge-concept_74855-9812.jpg" alt="" />
+			<Box gridColumn="span 6" sx={{ display: 'flex', alignItems: 'center' }}>
+				<img style={{ width: '90%' }} src={loginBg} alt="" />
 			</Box>
 
 		</Box>
