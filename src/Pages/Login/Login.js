@@ -1,6 +1,7 @@
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Box, Button, Checkbox, FormControlLabel, Link, TextField, Typography } from '@mui/material';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import loginBg from '../../images/login-bg.png'
 
 const Login = () => {
@@ -38,10 +39,13 @@ const Login = () => {
 					</form>
 
 					<Typography variant="body2">----------------------- New User ? -----------------------</Typography>
-					
+
+					<NavLink style={{ textDecoration: 'none' }} to="/register">
+
 						<Button className="registerSwitchBtn">
 							Register
 						</Button>
+					</NavLink>
 				</Box>
 
 

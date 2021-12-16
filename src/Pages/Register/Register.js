@@ -1,16 +1,22 @@
 import React from 'react';
-import { Box, Button, TextField, Typography } from '@mui/material';
-
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker from '@mui/lab/DatePicker';
-import Stack from '@mui/material/Stack';
+import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 
 import regiBg from '../../images/login-bg.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { DatePicker, LocalizationProvider } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const Register = () => {
-	const [value, setValue] = React.useState(new Date());
+	const [value, setValue] = React.useState(null);
+	const [gender, setGender] = React.useState('');
+
+	const handleChange = (event) => {
+		setGender(event.target.value);
+	};
 
 	return (
 		<Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={-1} sx={{ height: '650px' }}>
@@ -47,42 +53,59 @@ const Register = () => {
 							/>
 						</Box>
 
-						<LocalizationProvider
-							dateAdapter={AdapterDateFns}
-						>
-							<Stack spacing={3}>
-								<DatePicker
-									views={['year']}
-									label="Year only"
-									value={value}
-									onChange={(newValue) => {
-										setValue(newValue);
-									}}
-									renderInput={(params) => <TextField {...params} helperText={null} />}
-								/>
-								<DatePicker
-									views={['year', 'month']}
-									label="Year and Month"
-									minDate={new Date('2012-03-01')}
-									maxDate={new Date('2023-06-01')}
-									value={value}
-									onChange={(newValue) => {
-										setValue(newValue);
-									}}
-									renderInput={(params) => <TextField {...params} helperText={null} />}
-								/>
-							</Stack>
-						</LocalizationProvider>
+						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }} >
 
-						<TextField
-							sx={{ display: 'block', my: 1 }}
-							fullWidth
-							type="email"
-							label="Email"
-							variant="standard"
-						/>
+							<TextField
+								sx={{ width: '49%' }}
+								type="text"
+								label="Date of Birth"
+								placeholder="dd/mm/yyyy"
+								name="lastName"
+								variant="standard"
+							/>
 
-						<Box sx={{ display: 'flex', justifyContent: 'space-between', my: 1 }}>
+							<FormControl
+								variant="standard"
+								sx={{ width: '49%' }}
+							>
+								<InputLabel id="gender">Gender</InputLabel>
+								<Select
+									labelId="gender"
+									id="demo-simple-select-standard"
+									value={gender}
+									onChange={handleChange}
+									label="Gender"
+								>
+
+									<MenuItem value="male">Male</MenuItem>
+									<MenuItem value="female">Female</MenuItem>
+									<MenuItem value="other">Other</MenuItem>
+								</Select>
+							</FormControl>
+						</Box>
+
+						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+
+							<TextField
+								sx={{ width: '49%' }}
+								fullWidth
+								type="email"
+								label="Email"
+								variant="standard"
+							/>
+
+							<TextField
+								sx={{ width: '49%' }}
+								fullWidth
+								type="text"
+								label="Phone"
+								variant="standard"
+							/>
+						</Box>
+
+
+
+						<Box sx={{ display: 'flex', justifyContent: 'space-between', my: 2 }}>
 
 							<TextField
 								sx={{ width: '49%' }}
@@ -109,9 +132,11 @@ const Register = () => {
 
 					<Typography variant="body2">----------------------- Already User ? -----------------------</Typography>
 
-					<Link as={Button} to="login" className="registerSwitchBtn">
-						Login
-					</Link>
+					<NavLink style={{ textDecoration: 'none' }} to="/login">
+						<Button className="registerSwitchBtn">
+							Login
+						</Button>
+					</NavLink>
 				</Box>
 
 

@@ -234,7 +234,7 @@ const Header = () => {
 					<ListItemText>Logout</ListItemText>
 				</ListItem>
 
-				<ListItem style={linkStyle} as={Link} to="login" button>
+				<ListItem style={linkStyle} as={Link} to="/login" button>
 					<ListItemIcon>
 						<ExitToAppIcon />
 					</ListItemIcon>
@@ -242,7 +242,7 @@ const Header = () => {
 					<ListItemText>Login</ListItemText>
 				</ListItem>
 
-				<ListItem style={linkStyle} as={Link} to="register" button>
+				<ListItem style={linkStyle} as={Link} to="/register" button>
 					<ListItemIcon>
 						<ExitToAppIcon />
 					</ListItemIcon>
