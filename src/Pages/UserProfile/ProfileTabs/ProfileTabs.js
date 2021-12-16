@@ -27,21 +27,21 @@ const Tab = styled(TabUnstyled)`
 	text-align: center;
   
 	&.Mui-selected {
-	  color: #5854EF;
+	  color: var(--tpdc);
 	  font-weight: 700;
 	}
   
 	&:hover {
-	  color: ##5854EF;
+	  color: var(--tpdc);
 	}
   
 	&.${buttonUnstyledClasses.focusVisible} {
-	  color: #5854EF;
+	  color: var(--tpdc);
 	  outline: none;
 	}
   
 	&.${tabUnstyledClasses.selected} {
-	  border-bottom: 2px solid #5854EF;
+	  border-bottom: 2px solid var(--tpdc);
 	}
   
 	&.${buttonUnstyledClasses.disabled} {

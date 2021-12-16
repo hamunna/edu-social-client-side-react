@@ -12,7 +12,7 @@ const Login = () => {
 			<Box gridColumn="span 6" sx={{ p: 2, display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
 
 				<Box sx={{ width: '60%' }}>
-					<Typography variant="h3" sx={{ fontWeight: 900, color: "#5854EF" }}>Login</Typography>
+					<Typography variant="h3" sx={{ fontWeight: 900, color: "var(--tpdc)" }}>Login</Typography>
 
 					<Typography variant="body1">To take a trivial example, which of us ever laborious physical exercise, except to obtain</Typography>
 

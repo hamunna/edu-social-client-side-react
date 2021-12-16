@@ -2,12 +2,14 @@ import { Box, Container } from '@mui/material';
 import React from 'react';
 import FeedTextOneImgPost from '../../../Components/FeedPosts/FeedTextOneImgPost/FeedTextOneImgPost';
 import FeedTextOnlyPost from '../../../Components/FeedPosts/FeedTextOnlyPost/FeedTextOnlyPost';
+import Header from '../../../Components/Shared/Header/Header';
 import PostBox from '../../../Components/Shared/PostBlock/PostBox/PostBox';
 import RightSideBar from '../../../Components/Shared/SideBar/RightSideBar/RightSideBar';
 
 const Home = () => {
 	return (
 		<>
+			<Header />
 			<Container>
 				<Box sx={{ mt: 30 }} display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={-1}>
 

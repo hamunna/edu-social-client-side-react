@@ -38,7 +38,7 @@ const FeedTextOneImgPost = () => {
 			<CardHeader
 				avatar={
 					<Avatar
-						sx={{ bgcolor: red[500], border: '1px solid #5854EF'  }}
+						sx={{ bgcolor: red[500], border: '1px solid var(--tpdc)'  }}
 						aria-label="recipe"
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Sd1DjBd8dVAWNrUbZn7cpCz9-AET5gtpjcFGbOsYgx3NXwHZCy_qstvlsFbfZpRfxQQ&usqp=CAU"
 					>

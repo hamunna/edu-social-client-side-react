@@ -8,15 +8,19 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Register from './Pages/Register/Register';
 
 function App() {
   return (
     <Router>
-      <Header />
+      
       <Routes>
 
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<ProfilePage />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
       </Routes>
     </Router>

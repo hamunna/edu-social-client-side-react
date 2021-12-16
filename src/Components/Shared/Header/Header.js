@@ -21,6 +21,8 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import FeedIcon from '@mui/icons-material/Feed';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link, NavLink } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 // Search Functionalities
 const Search = styled('div')(({ theme }) => ({
@@ -186,7 +188,7 @@ const Header = () => {
 
 	const list = (anchor) => (
 		<Box
-			sx={{ width: 270, borderRight: '2px solid #5854EF', height: '100%' }}
+			sx={{ width: 270, borderRight: '2px solid var(--tpdc)', height: '100%' }}
 			role="presentation"
 			onClick={toggleDrawer(anchor, false)}
 			onKeyDown={toggleDrawer(anchor, false)}
@@ -194,7 +196,7 @@ const Header = () => {
 			<Toolbar className="theme-primary-drk-bg" sx={{ height: 80 }}>
 
 				<Typography sx={{ fontSize: 26, fontWeight: 700, margin: 'auto' }}>
-					<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
+					<span className="theme-primary-drk-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
 					<span style={{ color: '#ccc' }}>Social</span>
 				</Typography>
 
@@ -219,9 +221,34 @@ const Header = () => {
 				</ListItem>
 
 			</List>
+
 			<Divider />
+
 			<List>
 
+				<ListItem style={linkStyle} button>
+					<ListItemIcon>
+						<LogoutIcon />
+					</ListItemIcon>
+
+					<ListItemText>Logout</ListItemText>
+				</ListItem>
+
+				<ListItem style={linkStyle} as={Link} to="login" button>
+					<ListItemIcon>
+						<ExitToAppIcon />
+					</ListItemIcon>
+
+					<ListItemText>Login</ListItemText>
+				</ListItem>
+
+				<ListItem style={linkStyle} as={Link} to="register" button>
+					<ListItemIcon>
+						<ExitToAppIcon />
+					</ListItemIcon>
+
+					<ListItemText>Register</ListItemText>
+				</ListItem>
 
 			</List>
 		</Box>
