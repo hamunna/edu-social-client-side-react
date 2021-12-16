@@ -19,7 +19,7 @@ CSS Variable
 =============*/
 :root {
 	--tplc:  #615DFA;
-	--tpdc:  #5854EF;
+	--tpdc:  #4b46da;
 	--mplc: #5EDFFF;
 	--tpff: "Roboto, Sans-serif";
 }
@@ -60,4 +60,33 @@ Theme Common Styles
 
 body {
 	background-color: #f2f2f2;
+}
+
+/* Buttons Styles */
+.loginBtn {
+	margin: 20px 0 !important;
+	width: 100%;
+	border-radius: 20px !important;
+	padding: 8px 0 !important;
+	background-color: var(--tplc) !important;
+}
+
+.loginBtn:hover {
+	background-color: var(--tpdc) !important;
+
+}
+
+.registerSwitchBtn {
+	margin: 20px 0 !important;
+	width: 100%;
+	border-radius: 20px !important;
+	padding: 8px 0 !important;
+	background-color: transparent !important;
+	border: 1px solid #666 !important;
+	color: #666 !important;
+}
+
+.registerSwitchBtn:hover {
+	background-color: #666 !important;
+	color: #fff !important;
 }
