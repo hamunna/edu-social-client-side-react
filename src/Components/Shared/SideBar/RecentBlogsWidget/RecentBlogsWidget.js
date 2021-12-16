@@ -1,6 +1,7 @@
 import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
 const RecentBlogsWidget = () => {
 	return (
@@ -8,8 +9,8 @@ const RecentBlogsWidget = () => {
 		<Box sx={{ backgroundColor: '#fff', borderRadius: 2, p: 2, mb: 4 }}>
 
 			<Box sx={{ borderBottom: '1px solid #f2f2f2', fontSize: "18px", fontWeight: 700, mb: 2, pb: 1 }}>
-				<Typography gutterBottom component="h3"  sx={{fontSize: 18, fontWeight: 700}}>
-					Recent Blog Posts
+				<Typography gutterBottom component="h3"  sx={{fontSize: 18, fontWeight: 700, display: 'flex', alignItem: 'center', gap: 1}}>
+					<LibraryBooksIcon /> Recent Blog Posts
 				</Typography>
 			</Box>
 

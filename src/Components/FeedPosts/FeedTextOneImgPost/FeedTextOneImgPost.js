@@ -37,8 +37,12 @@ const FeedTextOneImgPost = () => {
 		<Card sx={{ backgroundColor: '#fff', borderRadius: 2, p: 2, mb: 4 }}>
 			<CardHeader
 				avatar={
-					<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-						R
+					<Avatar
+						sx={{ bgcolor: red[500], border: '1px solid #5854EF'  }}
+						aria-label="recipe"
+						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Sd1DjBd8dVAWNrUbZn7cpCz9-AET5gtpjcFGbOsYgx3NXwHZCy_qstvlsFbfZpRfxQQ&usqp=CAU"
+					>
+						
 					</Avatar>
 				}
 				action={
@@ -46,8 +50,8 @@ const FeedTextOneImgPost = () => {
 						<MoreVertIcon />
 					</IconButton>
 				}
-				title="Shrimp and Chorizo Paella"
-				subheader="September 14, 2016"
+				title="Elon Musk"
+				subheader="September 14, 2021"
 			/>
 		
 			<CardContent>
