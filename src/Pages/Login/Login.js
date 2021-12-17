@@ -13,9 +13,9 @@ const Login = () => {
 			<Box gridColumn="span 6" sx={{ p: 2, display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
 
 				<Box sx={{ width: '60%' }}>
-					<Typography variant="h3" sx={{ fontWeight: 900, color: "var(--tpdc)" }}>Login</Typography>
+					<Typography variant="h3" sx={{ fontWeight: 900, color: "var(--tpdc)", mb: 1 }}>Login</Typography>
 
-					<Typography variant="body1">To take a trivial example, which of us ever laborious physical exercise, except to obtain</Typography>
+					<Typography variant="body2">EduSocial is a campus based educational social networking site where you can connect with your friends</Typography>
 
 					<form>
 						<TextField sx={{ display: 'block', my: 3 }} fullWidth type="email" label="Email" variant="standard" />

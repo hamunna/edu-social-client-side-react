@@ -1,19 +1,44 @@
-import React from 'react';
-import { Box, Button, Stack, TextField, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Button, TextField, Typography } from '@mui/material';
 
 import regiBg from '../../images/login-bg.png';
-import { NavLink } from 'react-router-dom';
-import { DatePicker, LocalizationProvider } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import { NavLink, useNavigate } from 'react-router-dom';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import useFirebase from '../../hooks/useFirebase';
 
 const Register = () => {
-	const [value, setValue] = React.useState(null);
 	const [gender, setGender] = React.useState('');
+	const { user, registerUser } = useFirebase();
+	const [loginData, setLoginData] = useState([]);
 
+	const navigate = useNavigate();
+
+	// Handle Inputs with onBlur method
+
+	// Note:: Some input uses onChange to avoid Browser AutoFill
+	const handleOnBlur = e => {
+		const field = e.target.name;
+		const value = e.target.value;
+
+		const newLoginData = { ...loginData };
+		newLoginData[field] = value;
+
+		console.log(newLoginData);
+		setLoginData(newLoginData);
+	}
+
+	const handleRegisterUserSubmit = e => {
+		e.preventDefault();
+		registerUser(loginData.email, loginData.password, loginData.firstName + ' ' + loginData.lastName, navigate);
+		alert("Registered Successfully!");
+
+		e.target.reset();
+	}
+
+	// Handling Gender
 	const handleChange = (event) => {
 		setGender(event.target.value);
 	};
@@ -30,11 +55,11 @@ const Register = () => {
 			<Box gridColumn="span 6" sx={{ p: 2, display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
 
 				<Box sx={{ width: '70%' }}>
-					<Typography variant="h3" sx={{ fontWeight: 900, color: "var(--tpdc)" }}>Register</Typography>
+					<Typography variant="h3" sx={{ fontWeight: 900, color: "var(--tpdc)", mb: 1 }}>Register</Typography>
 
-					<Typography variant="body1">To take a trivial example, which of us ever laborious physical exercise, except to obtain</Typography>
+					<Typography variant="body2">EduSocial is a campus based educational social networking site where you can connect with your friends</Typography>
 
-					<form>
+					<form onSubmit={handleRegisterUserSubmit} autoComplete="off">
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
 							<TextField
 								sx={{ width: '49%' }}
@@ -42,6 +67,8 @@ const Register = () => {
 								label="First Name"
 								name="firstName"
 								variant="standard"
+								onChange={handleOnBlur}
+								required
 							/>
 
 							<TextField
@@ -50,6 +77,8 @@ const Register = () => {
 								label="Last Name"
 								name="lastName"
 								variant="standard"
+								onChange={handleOnBlur}
+								required
 							/>
 						</Box>
 
@@ -60,8 +89,10 @@ const Register = () => {
 								type="text"
 								label="Date of Birth"
 								placeholder="dd/mm/yyyy"
-								name="lastName"
+								name="birthDate"
 								variant="standard"
+								onChange={handleOnBlur}
+								required
 							/>
 
 							<FormControl
@@ -71,10 +102,13 @@ const Register = () => {
 								<InputLabel id="gender">Gender</InputLabel>
 								<Select
 									labelId="gender"
-									id="demo-simple-select-standard"
+									name="gender"
 									value={gender}
 									onChange={handleChange}
 									label="Gender"
+									sx={{ textAlign: 'left' }}
+									onBlur={handleOnBlur}
+									required
 								>
 
 									<MenuItem value="male">Male</MenuItem>
@@ -91,7 +125,10 @@ const Register = () => {
 								fullWidth
 								type="email"
 								label="Email"
+								name="email"
 								variant="standard"
+								onChange={handleOnBlur}
+								required
 							/>
 
 							<TextField
@@ -99,7 +136,9 @@ const Register = () => {
 								fullWidth
 								type="text"
 								label="Phone"
+								name="phone"
 								variant="standard"
+								onChange={handleOnBlur}
 							/>
 						</Box>
 
@@ -113,6 +152,8 @@ const Register = () => {
 								label="Password"
 								name="password"
 								variant="standard"
+								onBlur={handleOnBlur}
+								required
 							/>
 
 							<TextField
@@ -125,7 +166,7 @@ const Register = () => {
 
 						</Box>
 
-						<Button className="loginBtn" variant="contained">
+						<Button type="submit" className="loginBtn" variant="contained">
 							Register New Account
 						</Button>
 					</form>
