@@ -23,6 +23,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link, NavLink } from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import useFirebase from '../../../hooks/useFirebase';
 
 // Search Functionalities
 const Search = styled('div')(({ theme }) => ({
@@ -68,6 +69,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Header = () => {
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+	const { user, logOut } = useFirebase();
 
 	const isMenuOpen = Boolean(anchorEl);
 	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -226,30 +228,33 @@ const Header = () => {
 
 			<List>
 
-				<ListItem style={linkStyle} button>
-					<ListItemIcon>
-						<LogoutIcon />
-					</ListItemIcon>
+				{!user?.email ? <>
+					<ListItem style={linkStyle} as={Link} to="/login" button>
+						<ListItemIcon>
+							<ExitToAppIcon />
+						</ListItemIcon>
 
-					<ListItemText>Logout</ListItemText>
-				</ListItem>
+						<ListItemText>Login</ListItemText>
+					</ListItem>
 
-				<ListItem style={linkStyle} as={Link} to="/login" button>
-					<ListItemIcon>
-						<ExitToAppIcon />
-					</ListItemIcon>
+					<ListItem style={linkStyle} as={Link} to="/register" button>
+						<ListItemIcon>
+							<ExitToAppIcon />
+						</ListItemIcon>
 
-					<ListItemText>Login</ListItemText>
-				</ListItem>
+						<ListItemText>Register</ListItemText>
+					</ListItem>
+				</>
+					:
 
-				<ListItem style={linkStyle} as={Link} to="/register" button>
-					<ListItemIcon>
-						<ExitToAppIcon />
-					</ListItemIcon>
+					<ListItem style={linkStyle} button onClick={logOut}>
+						<ListItemIcon>
+							<LogoutIcon />
+						</ListItemIcon>
 
-					<ListItemText>Register</ListItemText>
-				</ListItem>
-
+						<ListItemText>Logout</ListItemText>
+					</ListItem>
+				}
 			</List>
 		</Box>
 	);

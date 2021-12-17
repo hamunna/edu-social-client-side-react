@@ -1,10 +1,39 @@
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Box, Button, Checkbox, FormControlLabel, Link, TextField, Typography } from '@mui/material';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import loginBg from '../../images/login-bg.png'
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
+import loginBg from '../../images/login-bg.png';
+
+
 
 const Login = () => {
+	const { user, loginUser } = useFirebase();
+	const [loginData, setLoginData] = useState([]);
+	const navigate = useNavigate();
+
+	const handleOnBlur = e => {
+		const field = e.target.name;
+		const value = e.target.value;
+
+
+		const newLoginData = { ...loginData };
+		newLoginData[field] = value;
+
+		console.log(newLoginData);
+		setLoginData(newLoginData);
+	}
+
+	const handleLoginUserSubmit = e => {
+
+		e.preventDefault();
+		alert("Registered Successfully!");
+		loginUser(loginData.email, loginData.password, navigate("/"));
+
+		e.target.reset();
+	}
+
+
 	return (
 		<Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={-1} sx={{ height: '650px' }}>
 
@@ -17,10 +46,26 @@ const Login = () => {
 
 					<Typography variant="body2">EduSocial is a campus based educational social networking site where you can connect with your friends</Typography>
 
-					<form>
-						<TextField sx={{ display: 'block', my: 3 }} fullWidth type="email" label="Email" variant="standard" />
+					<form onSubmit={handleLoginUserSubmit}>
+						<TextField
+							sx={{ display: 'block', my: 3 }}
+							fullWidth
+							type="email"
+							label="Email"
+							name="email"
+							variant="standard"
+							onBlur={handleOnBlur}
+						/>
 
-						<TextField sx={{ display: 'block', my: 3 }} fullWidth type="password" label="Password" variant="standard" />
+						<TextField
+							sx={{ display: 'block', my: 3 }}
+							fullWidth
+							type="password"
+							label="Password"
+							name="password"
+							variant="standard"
+							onBlur={handleOnBlur}
+						/>
 
 						<Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 							<FormControlLabel
@@ -33,7 +78,7 @@ const Login = () => {
 							<Link>Reset Password</Link>
 						</Box>
 
-						<Button className="loginBtn" variant="contained">
+						<Button type="submit" className="loginBtn" variant="contained">
 							Login your account
 						</Button>
 					</form>

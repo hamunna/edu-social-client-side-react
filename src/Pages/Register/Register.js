@@ -32,7 +32,7 @@ const Register = () => {
 
 	const handleRegisterUserSubmit = e => {
 		e.preventDefault();
-		registerUser(loginData.email, loginData.password, loginData.firstName + ' ' + loginData.lastName, navigate);
+		registerUser(loginData.email, loginData.password, loginData.firstName + ' ' + loginData.lastName, navigate("/"));
 		alert("Registered Successfully!");
 
 		e.target.reset();
@@ -59,7 +59,7 @@ const Register = () => {
 
 					<Typography variant="body2">EduSocial is a campus based educational social networking site where you can connect with your friends</Typography>
 
-					<form onSubmit={handleRegisterUserSubmit} autoComplete="off">
+					<form onSubmit={handleRegisterUserSubmit}>
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
 							<TextField
 								sx={{ width: '49%' }}
