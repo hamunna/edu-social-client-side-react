@@ -9,21 +9,25 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './Pages/Register/Register';
+import PrivateRoute from './Private/PrivateRoute';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
-    <Router>
-      
-      <Routes>
+    <AuthProvider>
+      <Router>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Routes>
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+          <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+          <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
 
-      </Routes>
-    </Router>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

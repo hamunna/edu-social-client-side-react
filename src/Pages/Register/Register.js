@@ -8,10 +8,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
 	const [gender, setGender] = React.useState('');
-	const { user, registerUser } = useFirebase();
+	const { user, registerUser } = useAuth();
+	// const { user, registerUser } = useFirebase();
 	const [loginData, setLoginData] = useState([]);
 
 	const navigate = useNavigate();

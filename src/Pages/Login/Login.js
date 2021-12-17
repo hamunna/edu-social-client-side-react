@@ -2,13 +2,15 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import { Box, Button, Checkbox, FormControlLabel, Link, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 import loginBg from '../../images/login-bg.png';
 
 
 
 const Login = () => {
-	const { user, loginUser } = useFirebase();
+	const { user, loginUser } = useAuth();
+	// const { user, loginUser } = useFirebase();
 	const [loginData, setLoginData] = useState([]);
 	const navigate = useNavigate();
 
