@@ -28,7 +28,7 @@ const ExpandMore = styled((props) => {
 }));
 
 const FeedSingleStatusBox = ({ status }) => {
-	const { statusText, statusImages, statusCollections } = status;
+	const { statusText, statusImages, statusCollections, statusId } = status;
 
 	const [expanded, setExpanded] = React.useState(false);
 
@@ -64,18 +64,32 @@ const FeedSingleStatusBox = ({ status }) => {
 				</Typography>
 			</CardContent>
 
-			<ImageList sx={{ width: '100%' }} cols={2}>
-				{
-					statusImages.map(statusImage => (
-						<ImageListItem key={statusImage.img}>
-							<img
-								src={statusImage}
-								alt={statusImage}
-								loading="lazy"
-							/>
-						</ImageListItem>
-					))}
-			</ImageList>
+			{
+				statusImages.length > 1 ? <ImageList
+					key={statusId}
+					sx={{ width: '100%' }}
+					cols={2}>
+					{
+						statusImages.map(statusImage => (
+							<ImageListItem>
+								<img
+									src={statusImage}
+									alt=""
+									loading="lazy"
+								/>
+							</ImageListItem>
+
+						))}
+				</ImageList>
+
+					:
+					statusImages.map(statusImage => <img
+						src={statusImage}
+						style={{ width: '100%' }}
+						alt=""
+						loading="lazy"
+					/>)
+			}
 
 
 			<CardActions disableSpacing>
@@ -127,7 +141,7 @@ const FeedSingleStatusBox = ({ status }) => {
 					)
 				}
 
-				<form style={{display: 'flex'}} autoComplete='off'>
+				<form style={{ display: 'flex' }} autoComplete='off'>
 					<Box
 						sx={{
 							width: '100%',

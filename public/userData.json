@@ -1,7 +1,9 @@
 [
 	{
 		"userId": 1,
-		"email": "hamunna99@gmail",
+		"userEmail": "munna@hm.com",
+		"photoURL": "https://media-exp1.licdn.com/dms/image/C5603AQGW5cSOakD7lA/profile-displayphoto-shrink_200_200/0/1585925499669?e=1645056000&v=beta&t=GPgR8TfNbIho9wHAls4grb6AIdbM-9w1_FvDGVfDuh4",
+		"bannerImageURL": "https://www.dlapiper.com/~/media/images/news/2018/programming_code_technology_computerwebsite_banner_432008923.jpg",
 		"password": "123456",
 		"basicInfo": {
 			"firstName": "Hossain Ahmad",
@@ -15,15 +17,15 @@
 			"socialSites": [
 				{
 					"socialSiteName": "Facebook",
-					"link": "www.facebook.com/hamunna15"
+					"link": "https://www.facebook.com/hamunna15"
 				},
 				{
 					"socialSiteName": "GitHub",
-					"link": "www.github.com/hamunna"
+					"link": "https://www.github.com/hamunna"
 				},
 				{
 					"socialSiteName": "LinkedIn",
-					"link": "www.linkedin.com/hamunna"
+					"link": "https://www.linkedin.com/hamunna"
 				}
 			],
 			"address": {
@@ -40,6 +42,29 @@
 				"endData": "01/11/21"
 			}
 		],
+		"hobbiesInterests": {
+			"sports": [
+				"Cricket",
+				"Football",
+				"Tennis"
+			],
+			"books": [
+				"Connecting the dots",
+				"Rich Dad, Poor Dad"
+			],
+			"programmingTechnologies": [
+				"Javascript",
+				"React.js",
+				"Node.js",
+				"Express.js",
+				"MongoDB"			
+			],
+			"hobbies": [
+				"Reading",
+				"Coding",
+				"Swimming"
+			]
+		},
 		"activityData": {
 			"friends": [
 				"userId",

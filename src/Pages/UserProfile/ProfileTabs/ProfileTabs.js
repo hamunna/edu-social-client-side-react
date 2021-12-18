@@ -62,7 +62,7 @@ const TabsList = styled(TabsListUnstyled)`
 	justify-content: space-between;
   `;
 
-const ProfileTabs = () => {
+const ProfileTabs = ({user}) => {
 	return (
 		<Box sx={{ pt: 0 }}>
 			<TabsUnstyled defaultValue={0}>
@@ -92,7 +92,7 @@ const ProfileTabs = () => {
 					<Box gridColumn="span 8" sx={{ p: 2 }}>
 
 						<TabPanel value={0} sx={{p: 0}}><ProfileTimeline /></TabPanel>
-						<TabPanel value={1}><ProfileAbout /></TabPanel>
+						<TabPanel value={1}><ProfileAbout user={user} /></TabPanel>
 						<TabPanel value={2}>Friends</TabPanel>
 						<TabPanel value={3}>Groups</TabPanel>
 						<TabPanel value={4}>Photos</TabPanel>

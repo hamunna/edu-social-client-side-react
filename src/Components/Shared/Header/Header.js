@@ -206,7 +206,7 @@ const Header = () => {
 
 			<List>
 
-				<ListItem style={linkStyle} as={Link} to="profile" button>
+				<ListItem style={linkStyle} as={Link} to="/profile" button>
 					<ListItemIcon>
 						<AccountCircleIcon />
 					</ListItemIcon>

@@ -13,7 +13,7 @@ const StatusEditor = () => {
 					variant="standard"
 					sx={{ border: 'none', outline: 'none', p: 3, boxSizing: 'border-box'}}
 				/>
-				<Button sx={{ display: 'block', mx: 'auto' }} variant="contained" className="theme-primary-drk-bg">Post Submit</Button>
+				<Button sx={{ display: 'block', mx: 'auto' }} variant="contained" className="theme-primary-btn">Post Submit</Button>
 			</form>
 		</Box>
 	);

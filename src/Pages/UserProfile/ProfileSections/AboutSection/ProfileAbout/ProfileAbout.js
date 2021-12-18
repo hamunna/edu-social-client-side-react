@@ -1,13 +1,16 @@
 import React from 'react';
 import ProfileBasicInfoCard from '../ProfileBasicInfoCard/ProfileBasicInfoCard';
+import ProfileContactInfoCard from '../ProfileContactInfoCard/ProfileContactInfoCard';
 import ProfileHobbiesInterestsCard from '../ProfileHobbiesInterestsCard/ProfileHobbiesInterestsCard';
 
-const ProfileAbout = () => {
+const ProfileAbout = ({ user }) => {
 	return (
 		<>
-			<ProfileBasicInfoCard />
+			<ProfileBasicInfoCard user={user} />
 
-			<ProfileHobbiesInterestsCard />
+			<ProfileHobbiesInterestsCard user={user} />
+
+			<ProfileContactInfoCard user={user} />
 		</>
 	);
 };

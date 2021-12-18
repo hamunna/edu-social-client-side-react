@@ -8,7 +8,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import InfoIcon from '@mui/icons-material/Info';
 
-const ProfileBasicInfoCard = () => {
+const ProfileBasicInfoCard = ({ user }) => {
+	const { userId, userEmail, photoURL, basicInfo, contactInfo, workExperience, activityData } = user;
+	
 	return (
 		<TableContainer component={Paper} sx={{mb: 3, borderRadius: 2}}>
 			<Table aria-label="caption table">
@@ -23,28 +25,29 @@ const ProfileBasicInfoCard = () => {
 				<TableBody>
 
 					<TableRow key={"row.name"}>
-						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none'}}>Name</TableCell>
-						<TableCell align="left" sx={{border: 'none'}}>Elon Musk</TableCell>
+						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none' }}>Name</TableCell>
+						
+						<TableCell align="left" sx={{border: 'none'}}>{`${basicInfo.firstName} ${basicInfo.lastName}`}</TableCell>
 					</TableRow>
 
 					<TableRow key={"row.name"} sx={{border: 'none'}}>
 						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none'}}>Date of Birth</TableCell>
-						<TableCell align="left" sx={{border: 'none'}}>15 - 01 - 1998</TableCell>
+						<TableCell align="left" sx={{border: 'none'}}>{basicInfo.birthDate}</TableCell>
 					</TableRow>
 
 					<TableRow key={"row.name"} sx={{border: 'none'}}>
 						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none'}}>Gender</TableCell>
-						<TableCell align="left" sx={{border: 'none'}}>Male</TableCell>
+						<TableCell align="left" sx={{border: 'none'}}>{basicInfo.gender}</TableCell>
 					</TableRow>
 
 					<TableRow key={"row.name"} sx={{border: 'none'}}>
 						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none'}}>Email</TableCell>
-						<TableCell align="left" sx={{border: 'none'}}>elon@musk.com</TableCell>
+						<TableCell align="left" sx={{border: 'none'}}>{userEmail}</TableCell>
 					</TableRow>
 
 					<TableRow key={"row.name"} sx={{border: 'none'}}>
 						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none'}}>Phone</TableCell>
-						<TableCell align="left" sx={{border: 'none'}}>+8801789876544</TableCell>
+						<TableCell align="left" sx={{border: 'none'}}>{contactInfo.contactInfo}</TableCell>
 					</TableRow>
 
 				</TableBody>
