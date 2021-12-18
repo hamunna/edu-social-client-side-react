@@ -1,5 +1,6 @@
 import { Box, Container } from '@mui/material';
 import React from 'react';
+import FeedStatusBoxes from '../../../Components/FeedPosts/FeedStatusBoxes/FeedStatusBoxes';
 import FeedTextOneImgPost from '../../../Components/FeedPosts/FeedTextOneImgPost/FeedTextOneImgPost';
 import FeedTextOnlyPost from '../../../Components/FeedPosts/FeedTextOnlyPost/FeedTextOnlyPost';
 import Header from '../../../Components/Shared/Header/Header';
@@ -19,9 +20,7 @@ const Home = () => {
 
 						<PostBox />
 
-						<FeedTextOnlyPost />
-
-						<FeedTextOneImgPost />
+						<FeedStatusBoxes />
 
 					</Box>
 

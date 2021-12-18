@@ -13,7 +13,6 @@ import useAuth from '../../hooks/useAuth';
 const Register = () => {
 	const [gender, setGender] = React.useState('');
 	const { user, registerUser } = useAuth();
-	// const { user, registerUser } = useFirebase();
 	const [loginData, setLoginData] = useState([]);
 
 	const navigate = useNavigate();
@@ -62,6 +61,8 @@ const Register = () => {
 					<Typography variant="body2">EduSocial is a campus based educational social networking site where you can connect with your friends</Typography>
 
 					<form onSubmit={handleRegisterUserSubmit}>
+
+						{/* Name Fields */}
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 3 }}>
 							<TextField
 								sx={{ width: '49%' }}
@@ -84,6 +85,7 @@ const Register = () => {
 							/>
 						</Box>
 
+						{/* DOB & Gender */}
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }} >
 
 							<TextField
@@ -118,6 +120,31 @@ const Register = () => {
 									<MenuItem value="other">Other</MenuItem>
 								</Select>
 							</FormControl>
+						</Box>
+
+						{/* Web & Image */}
+						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+
+							<TextField
+								sx={{ width: '49%' }}
+								fullWidth
+								type="url"
+								label="Website"
+								name="website"
+								variant="standard"
+								onChange={handleOnBlur}
+							/>
+
+							<TextField
+								sx={{ width: '49%' }}
+								fullWidth
+								type="url"
+								label="Image-URL"
+								name="imageURL"
+								variant="standard"
+								onChange={handleOnBlur}
+								required
+							/>
 						</Box>
 
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>

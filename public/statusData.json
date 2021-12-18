@@ -1,0 +1,114 @@
+[
+	{
+		"statusId": "1001",
+		"statusPosterEmail": "elon@musk.com",
+		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
+		"statusImages": [
+			"https://image.winudf.com/v2/image1/Y29tLm5hdHVyYWxpbWFnZWhkd2FsbHBhcGVyLnJ5cnNfc2NyZWVuXzBfMTU0MjM3MDgxNl8wODU/screen-0.jpg?fakeurl=1&type=.jpg"
+		],
+		"statusCollections": {
+			"loves": "22",
+			"comments": [
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Very Nice"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Wow! Good Idea"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Very Nice"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Wow! Good Idea"
+				}
+			]
+		}
+	},
+	{
+		"statusId": "1002",
+		"statusPosterEmail": "elon@musk.com",
+		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
+		"statusImages": [
+			"https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821__480.jpg",
+			"https://i.pinimg.com/736x/cf/59/82/cf59821eabc77942bc0100ebfd3551d4.jpg"
+		],
+		"statusCollections": {
+			"loves": "39",
+			"comments": [
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Tui Abul"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Tui Abul"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Dhur Bolod!"
+				}
+			]
+		}
+	},
+	{
+		"statusId": "1003",
+		"statusPosterEmail": "elon@musk.com",
+		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
+		"statusImages": [],
+		"statusCollections": {
+			"loves": "21",
+			"comments": []
+		}
+	},
+	{
+		"statusId": "1004",
+		"statusPosterEmail": "elon@musk.com",
+		"statusText": "",
+		"statusImages": [
+			"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__480.jpg",
+			"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__480.jpg",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWgtuz67UqT2nscpOIl3txLRTJR2WpZ8WGxur5h529ssyjAQX3g50M8dyqUNzVwlcHq8Y&usqp=CAU",
+			"https://static.scientificamerican.com/sciam/cache/file/C3D6DFBB-92DD-43D0-A9F8CB9AB477F652_source.jpg?w=590&h=800&5F47C5D2-41D8-476F-A29200DA225DCEEA"
+		],
+		"statusCollections": {
+			"loves": "65",
+			"comments": [
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Very Nice"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Wow! Good Idea"
+				}
+			]
+		}
+	},
+	{
+		"statusId": "1005",
+		"statusPosterEmail": "elon@musk.com",
+		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
+		"statusImages": [
+			"https://doneads.org/wp-content/uploads/2021/10/Online-Courses-1.jpg",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWgtuz67UqT2nscpOIl3txLRTJR2WpZ8WGxur5h529ssyjAQX3g50M8dyqUNzVwlcHq8Y&usqp=CAU",
+			"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__480.jpg"
+		],
+		"statusCollections": {
+			"loves": "9",
+			"comments": [
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Very Nice"
+				},
+				{
+					"userEmail": "userEmail",
+					"statusCommentText": "Wow! Good Idea"
+				}
+			]
+		}
+	}
+]

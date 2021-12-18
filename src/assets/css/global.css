@@ -27,10 +27,11 @@ CSS Variable
 Theme Common Styles 
 ======================*/
 .theme-primary-lt-bg {
-	background-color: var(--tplc);
-	font-family: var(--tpff);
-	color: #fff;
-	font-weight: 600;
+	background-color: var(--tplc) !important;
+	font-family: var(--tpff) !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	font-family: 'Roboto';
 }
 
 .theme-primary-lt-text {
@@ -38,10 +39,11 @@ Theme Common Styles
 }
 
 .theme-primary-drk-bg {
-	background-color: var(--tpdc);
-	font-family: var(--tpff);
-	color: #fff;
-	font-weight: 600;
+	background-color: var(--tpdc) !important;
+	font-family: var(--tpff) !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	font-family: 'Roboto';
 }
 
 .theme-primary-drk-text {
@@ -66,6 +68,18 @@ body {
 }
 
 /* Buttons Styles */
+.theme-primary-btn {
+	background-color: var(--tplc) !important;
+	font-family: var(--tpff) !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	font-family: 'Roboto' !important;
+}
+
+.theme-primary-btn:hover {
+	background-color: var(--tpdc) !important;
+}
+
 .loginBtn {
 	margin: 20px 0 !important;
 	width: 100%;

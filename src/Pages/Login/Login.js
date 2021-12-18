@@ -10,7 +10,6 @@ import loginBg from '../../images/login-bg.png';
 
 const Login = () => {
 	const { user, loginUser } = useAuth();
-	// const { user, loginUser } = useFirebase();
 	const [loginData, setLoginData] = useState([]);
 	const navigate = useNavigate();
 
@@ -29,7 +28,7 @@ const Login = () => {
 	const handleLoginUserSubmit = e => {
 
 		e.preventDefault();
-		alert("Registered Successfully!");
+		alert("Login Successfully!");
 		loginUser(loginData.email, loginData.password, navigate("/"));
 
 		e.target.reset();
@@ -77,7 +76,7 @@ const Login = () => {
 								labelPlacement="remember"
 							/>
 
-							<Link>Reset Password</Link>
+							<Button>Reset Password</Button>
 						</Box>
 
 						<Button type="submit" className="loginBtn" variant="contained">

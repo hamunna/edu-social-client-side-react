@@ -1,0 +1,74 @@
+[
+	{
+		"userId": 1,
+		"email": "hamunna99@gmail",
+		"password": "123456",
+		"basicInfo": {
+			"firstName": "Hossain Ahmad",
+			"lastName": "Munna",
+			"birthDate": "15/01/1998",
+			"gender": "male"
+		},
+		"contactInfo": {
+			"phone": "+8801796766896",
+			"website": "www.hamunna.com",
+			"socialSites": [
+				{
+					"socialSiteName": "Facebook",
+					"link": "www.facebook.com/hamunna15"
+				},
+				{
+					"socialSiteName": "GitHub",
+					"link": "www.github.com/hamunna"
+				},
+				{
+					"socialSiteName": "LinkedIn",
+					"link": "www.linkedin.com/hamunna"
+				}
+			],
+			"address": {
+				"street": "Gotatikar",
+				"city": "Sylhet",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "The IT Aid",
+				"jobTitle": "Instructor",
+				"startDate": "26/10/19",
+				"endData": "01/11/21"
+			}
+		],
+		"activityData": {
+			"friends": [
+				"userId",
+				"userId"
+			],
+			"pendingFriendRequests": [
+				"userId",
+				"userId"
+			],
+			"following": [
+				"userId",
+				"userId"
+			],
+			"followers": [
+				"userId",
+				"userId"
+			],
+			"groups": [
+				"groupId",
+				"groupId"
+			],
+			"purchaseHistory": [
+				{
+					"productId": "123",
+					"productName": "Connecting the dots",
+					"purchasePrice": "76",
+					"purchaseDate": "18/12/21"
+				}
+			]
+		}
+	}
+]
