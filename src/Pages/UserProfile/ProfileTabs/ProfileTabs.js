@@ -8,7 +8,7 @@ import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import RightSideBar from '../../../Components/Shared/SideBar/RightSideBar/RightSideBar';
 import ProfileAbout from '../ProfileSections/AboutSection/ProfileAbout/ProfileAbout';
-import ProfileTimeline from '../ProfileSections/ProfileTimeline/ProfileTimeline';
+import ProfileTimelinePosts from '../ProfileSections/ProfileTimeline/ProfileTimelinePosts/ProfileTimelinePosts';
 
 
 const Tab = styled(TabUnstyled)`
@@ -91,7 +91,7 @@ const ProfileTabs = ({user}) => {
 					{/* Left & Main Side */}
 					<Box gridColumn="span 8" sx={{ p: 2 }}>
 
-						<TabPanel value={0} sx={{p: 0}}><ProfileTimeline /></TabPanel>
+						<TabPanel value={0} sx={{p: 0}}><ProfileTimelinePosts user={user} /></TabPanel>
 						<TabPanel value={1}><ProfileAbout user={user} /></TabPanel>
 						<TabPanel value={2}>Friends</TabPanel>
 						<TabPanel value={3}>Groups</TabPanel>

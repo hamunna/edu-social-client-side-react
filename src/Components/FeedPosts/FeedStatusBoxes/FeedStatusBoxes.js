@@ -14,7 +14,7 @@ const FeedStatusBoxes = () => {
 		<>
 			{
 				statuses.map(status => <FeedSingleStatusBox
-					key={status.statusId}
+					key={status._id}
 					status={status}
 				/>)
 			}

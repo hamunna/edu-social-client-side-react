@@ -23,11 +23,11 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const ProfileBanner = ({ user }) => {
 
-	const { userId, userEmail, photoURL, basicInfo, contactInfo, workExperience, activityData, bannerImageURL } = user;
+	// const { photoURL, basicInfo, contactInfo, bannerImageURL } = user;
 
 	return (
 		<Box sx={{
-			backgroundImage: `url(${bannerImageURL})`,
+			backgroundImage: `url(${user?.bannerImageURL})`,
 			backgroundRepeat: 'no-repeat',
 			backgroundSize: 'cover',
 			height: '420px',
@@ -45,26 +45,26 @@ const ProfileBanner = ({ user }) => {
 				<ListItemAvatar sx={{ mr: 2 }}>
 					<Avatar
 						alt=""
-						src={photoURL}
+						src={user?.photoURL}
 						sx={{ width: 130, height: 130, border: '2px solid #ccc' }}
 					/>
 				</ListItemAvatar>
 
 				<Box>
-					<Typography sx={{ fontSize: 26, fontWeight: 500, color: '#fff', mb: 0 }}>{`${basicInfo.firstName} ${basicInfo.lastName}`}</Typography>
+					<Typography sx={{ fontSize: 26, fontWeight: 500, color: '#fff', mb: 0 }}>{`${user?.basicInfo?.firstName} ${user?.basicInfo?.lastName}`}</Typography>
 
 					<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
 						<LocationOnIcon sx={{ color: '#fff' }} />
-						<Typography sx={{ fontSize: 16, fontWeight: 300, color: '#fff', mt: 0 }}>{`${contactInfo.address.city}, ${contactInfo.address.country}`}</Typography>
+						<Typography sx={{ fontSize: 16, fontWeight: 300, color: '#fff', mt: 0 }}>{`${user?.contactInfo?.address?.city}, ${user?.contactInfo?.address?.country}`}</Typography>
 					</Box>
 
 					<Box sx={{ marginTop: '30px' }}>
 
 						{
-							contactInfo.socialSites.map(socialSite => <SocialIcon
-								key={socialSite.link}
-								network={socialSite.socialSiteName.toLowerCase()}
-								url={socialSite.link}
+							user?.contactInfo?.socialSites.map(socialSite => <SocialIcon
+								key={socialSite?.link}
+								network={socialSite?.socialSiteName.toLowerCase()}
+								url={socialSite?.link}
 								style={{ height: 30, width: 30, border: '1px solid #fff', borderRadius: '50%', backgroundColor: '#fff', marginRight: '10px' }} />)
 						}
 

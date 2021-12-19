@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -17,7 +17,6 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import ForumIcon from '@mui/icons-material/Forum';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import { Button, CssBaseline, Divider, List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import FeedIcon from '@mui/icons-material/Feed';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link, NavLink } from 'react-router-dom';
@@ -66,10 +65,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }));
 
+
+
+
+
 const Header = () => {
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+	const [anchorEl, setAnchorEl] = useState(null);
+	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 	const { user, logOut } = useFirebase();
+
+	const [dbUsers, setDbUsers] = useState([]);
+
+	useEffect(() => {
+		fetch("http://localhost:5000/users")
+			.then(res => res.json())
+			.then(data => setDbUsers(data));
+	}, []);
+	
+
+	// const dbUser = dbUsers.map(dbUser => dbUser)
 
 	const isMenuOpen = Boolean(anchorEl);
 	const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -206,13 +220,16 @@ const Header = () => {
 
 			<List>
 
-				<ListItem style={linkStyle} as={Link} to="/profile" button>
-					<ListItemIcon>
-						<AccountCircleIcon />
-					</ListItemIcon>
+				{
+					dbUsers.map(dbUser => user?.email === dbUser?.userEmail && <ListItem style={linkStyle} as={Link} to={`/myProfile/${dbUser._id}`} button>
+							<ListItemIcon>
+								<AccountCircleIcon />
+							</ListItemIcon>
 
-					<ListItemText>Profile</ListItemText>
-				</ListItem>
+							<ListItemText>Profile</ListItemText>
+						</ListItem>
+					)
+				}
 
 				<ListItem style={linkStyle} as={Link} to="/" button key={'newsFeed'}>
 					<ListItemIcon>

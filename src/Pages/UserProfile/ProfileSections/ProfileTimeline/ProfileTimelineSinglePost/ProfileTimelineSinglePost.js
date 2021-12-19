@@ -26,8 +26,9 @@ const ExpandMore = styled((props) => {
 	}),
 }));
 
-const FeedSingleStatusBox = ({ status }) => {
-	const { statusText, statusImages, statusCollections, _id } = status;
+const ProfileTimelineSinglePost = ({ timelinePost, user }) => {
+	const { statusText, statusImages, statusCollections, _id } = timelinePost;
+	const { userId, userEmail, photoURL, basicInfo, contactInfo, workExperience, activityData } = user;
 
 	const [expanded, setExpanded] = React.useState(false);
 
@@ -42,8 +43,7 @@ const FeedSingleStatusBox = ({ status }) => {
 				avatar={
 					<Avatar
 						sx={{ bgcolor: red[500], border: '1px solid var(--tpdc)' }}
-						aria-label="recipe"
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Sd1DjBd8dVAWNrUbZn7cpCz9-AET5gtpjcFGbOsYgx3NXwHZCy_qstvlsFbfZpRfxQQ&usqp=CAU"
+						src={photoURL}
 					>
 
 					</Avatar>
@@ -53,7 +53,7 @@ const FeedSingleStatusBox = ({ status }) => {
 						<MoreVertIcon />
 					</IconButton>
 				}
-				title="Elon Musk"
+				title={`${basicInfo?.firstName} ${basicInfo?.lastName}`}
 				subheader="September 14, 2021"
 			/>
 
@@ -163,4 +163,4 @@ const FeedSingleStatusBox = ({ status }) => {
 	);
 };
 
-export default FeedSingleStatusBox;
+export default ProfileTimelineSinglePost;

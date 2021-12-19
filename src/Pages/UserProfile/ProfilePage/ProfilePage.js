@@ -9,7 +9,7 @@ const ProfilePage = () => {
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
-		fetch("./userData.json")
+		fetch("http://localhost:5000/users")
 			.then(res => res.json())
 			.then(data => setUsers(data));
 	}, []);
@@ -18,6 +18,8 @@ const ProfilePage = () => {
 		<>
 			<Header />
 			<Toolbar sx={{ height: 80 }} />
+
+			<h1>This is Normal User Profile Page</h1>
 
 			<Container sx={{ mb: 60 }}>
 				{
