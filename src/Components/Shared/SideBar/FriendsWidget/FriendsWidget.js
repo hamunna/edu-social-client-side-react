@@ -1,15 +1,23 @@
 import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const FriendsWidget = () => {
+	const [friends, setFriends] = useState([]);
+
+	useEffect(() => {
+		fetch("http://localhost:5000/users")
+			.then(res => res.json())
+			.then(data => setFriends(data))
+	}, [])
+
 	return (
 
 		<Box sx={{ backgroundColor: '#fff', borderRadius: 2, p: 2, mb: 4 }}>
 
 			<Box sx={{ borderBottom: '1px solid #f2f2f2', fontSize: "18px", fontWeight: 700, mb: 2, pb: 1 }}>
-				<Typography gutterBottom component="h3" sx={{fontSize: 18, fontWeight: 700, display: 'flex', alignItem: 'center', gap: 1}}>
+				<Typography gutterBottom component="h3" sx={{ fontSize: 18, fontWeight: 700, display: 'flex', alignItem: 'center', gap: 1 }}>
 					<PeopleAltIcon /> Friends
 				</Typography>
 			</Box>
@@ -17,49 +25,20 @@ const FriendsWidget = () => {
 			<Box>
 				<List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 
-					<ListItem>
-						<ListItemAvatar sx={{ mr: 2 }}>
-							<Avatar
-								alt=""
-								src="https://media.todaybirthdays.com/2015/09/28/mark-zuckerberg.jpg"
-								sx={{ width: 48, height: 48 }}
-							/>
-						</ListItemAvatar>
-						<ListItemText primary="Mark Zuckerberg" secondary="Jan 9, 2014" />
-					</ListItem>
+					{
+						friends.map(friend => <ListItem key={friend._id}>
+							<ListItemAvatar sx={{ mr: 2 }}>
+								<Avatar
+									alt=""
+									src={friend.photoURL}
+									sx={{ width: 48, height: 48 }}
+								/>
+							</ListItemAvatar>
+							<ListItemText primary={`${friend.basicInfo.firstName} ${friend.basicInfo.lastName}`} secondary="Jan 9, 2014" />
+						</ListItem>
+						)
+					}
 
-					<ListItem>
-						<ListItemAvatar sx={{ mr: 2 }}>
-							<Avatar
-								alt=""
-								src="https://media.todaybirthdays.com/2015/09/28/mark-zuckerberg.jpg"
-								sx={{ width: 48, height: 48 }}
-							/>
-						</ListItemAvatar>
-						<ListItemText primary="Mark Zuckerberg" secondary="Jan 9, 2014" />
-					</ListItem>
-
-					<ListItem>
-						<ListItemAvatar sx={{ mr: 2 }}>
-							<Avatar
-								alt=""
-								src="https://media.todaybirthdays.com/2015/09/28/mark-zuckerberg.jpg"
-								sx={{ width: 48, height: 48 }}
-							/>
-						</ListItemAvatar>
-						<ListItemText primary="Mark Zuckerberg" secondary="Jan 9, 2014" />
-					</ListItem>
-
-					<ListItem>
-						<ListItemAvatar sx={{ mr: 2 }}>
-							<Avatar
-								alt=""
-								src="https://media.todaybirthdays.com/2015/09/28/mark-zuckerberg.jpg"
-								sx={{ width: 48, height: 48 }}
-							/>
-						</ListItemAvatar>
-						<ListItemText primary="Mark Zuckerberg" secondary="Jan 9, 2014" />
-					</ListItem>
 
 				</List>
 			</Box>

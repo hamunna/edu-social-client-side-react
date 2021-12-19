@@ -12,6 +12,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
 	const [gender, setGender] = React.useState('');
+	const [city, setCity] = React.useState('');
 	const { user, registerUser } = useAuth();
 	const [loginData, setLoginData] = useState([]);
 
@@ -40,8 +41,13 @@ const Register = () => {
 	}
 
 	// Handling Gender
-	const handleChange = (event) => {
+	const handleGenderChange = (event) => {
 		setGender(event.target.value);
+	};
+
+	// Handling Gender
+	const handleCityChange = (event) => {
+		setCity(event.target.value);
 	};
 
 	return (
@@ -108,16 +114,16 @@ const Register = () => {
 									labelId="gender"
 									name="gender"
 									value={gender}
-									onChange={handleChange}
+									onChange={handleGenderChange}
 									label="Gender"
 									sx={{ textAlign: 'left' }}
 									onBlur={handleOnBlur}
 									required
 								>
 
-									<MenuItem value="male">Male</MenuItem>
-									<MenuItem value="female">Female</MenuItem>
-									<MenuItem value="other">Other</MenuItem>
+									<MenuItem value="Male">Male</MenuItem>
+									<MenuItem value="Female">Female</MenuItem>
+									<MenuItem value="Other">Other</MenuItem>
 								</Select>
 							</FormControl>
 						</Box>
@@ -129,18 +135,19 @@ const Register = () => {
 								sx={{ width: '49%' }}
 								fullWidth
 								type="url"
-								label="Website"
-								name="website"
+								label="Image-URL"
+								name="imageURL"
 								variant="standard"
 								onChange={handleOnBlur}
+								required
 							/>
 
 							<TextField
 								sx={{ width: '49%' }}
 								fullWidth
 								type="url"
-								label="Image-URL"
-								name="imageURL"
+								label="Banner Img-URL"
+								name="bannerImageURL"
 								variant="standard"
 								onChange={handleOnBlur}
 								required
@@ -160,15 +167,33 @@ const Register = () => {
 								required
 							/>
 
-							<TextField
-								sx={{ width: '49%' }}
-								fullWidth
-								type="text"
-								label="Phone"
-								name="phone"
+							{/* City Select */}
+							<FormControl
 								variant="standard"
-								onChange={handleOnBlur}
-							/>
+								sx={{ width: '49%' }}
+							>
+								<InputLabel id="city">Your City</InputLabel>
+								<Select
+									labelId="city"
+									name="city"
+									value={city}
+									onChange={handleCityChange}
+									label="City"
+									sx={{ textAlign: 'left' }}
+									onBlur={handleOnBlur}
+									required
+								>
+
+									<MenuItem value="Dhaka">Dhaka</MenuItem>
+									<MenuItem value="Chattagram">Chattagram</MenuItem>
+									<MenuItem value="Sylhet">Sylhet</MenuItem>
+									<MenuItem value="Rajshahi">Rajshahi</MenuItem>
+									<MenuItem value="Khulna">Khulna</MenuItem>
+									<MenuItem value="Borishal">Borishal</MenuItem>
+									<MenuItem value="Rongpur">Rongpur</MenuItem>
+									<MenuItem value="Mymensingh">Mymensingh</MenuItem>
+								</Select>
+							</FormControl>
 						</Box>
 
 

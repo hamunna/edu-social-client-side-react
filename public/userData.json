@@ -9,7 +9,7 @@
 			"firstName": "Hossain Ahmad",
 			"lastName": "Munna",
 			"birthDate": "15/01/1998",
-			"gender": "male"
+			"gender": "Male"
 		},
 		"contactInfo": {
 			"phone": "+8801796766896",
@@ -26,6 +26,10 @@
 				{
 					"socialSiteName": "LinkedIn",
 					"link": "https://www.linkedin.com/hamunna"
+				},
+				{
+					"socialSiteName": "Youtube",
+					"link": "https://www.youtube.com/channel/UCU8_M6GAuFnjeY2OyeQ7aZw"
 				}
 			],
 			"address": {
@@ -57,7 +61,7 @@
 				"React.js",
 				"Node.js",
 				"Express.js",
-				"MongoDB"			
+				"MongoDB"
 			],
 			"hobbies": [
 				"Reading",
@@ -92,6 +96,184 @@
 					"productName": "Connecting the dots",
 					"purchasePrice": "76",
 					"purchaseDate": "18/12/21"
+				}
+			]
+		}
+	},
+	{
+		"userId": 2,
+		"userEmail": "himu@hm.com",
+		"photoURL": "https://media-exp1.licdn.com/dms/image/C5603AQHzDN78zsuquQ/profile-displayphoto-shrink_800_800/0/1615499103028?e=1645660800&v=beta&t=NoYAU_R9U0kAe3dL0VRnEM7Vg1PURuRxZw81P-mXud8",
+		"bannerImageURL": "https://cdn.wallpapersafari.com/2/95/OmoCWj.jpg",
+		"password": "123456",
+		"basicInfo": {
+			"firstName": "Abdul Aziz",
+			"lastName": "Himu",
+			"birthDate": "07/03/1993",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "+8801712611101",
+			"website": "www.himu.com",
+			"socialSites": [
+				{
+					"socialSiteName": "Facebook",
+					"link": "https://www.facebook.com/ahimu3"
+				},
+				{
+					"socialSiteName": "Instagram",
+					"link": "https://www.instagram.com/abdulazizhimu/"
+				},
+				{
+					"socialSiteName": "LinkedIn",
+					"link": "https://www.linkedin.com/in/abdul-aziz-himu-a6a358209/?originalSubdomain=bd"
+				}
+			],
+			"address": {
+				"street": "Gangpar, Birgoan",
+				"city": "Dhaka",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "Unilever",
+				"jobTitle": "Marketing Executive",
+				"startDate": "01/03/18",
+				"endData": "30/7/20"
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [
+				"Cricket",
+				"Football",
+				"Hadudu"
+			],
+			"books": [
+				"Abong Himu",
+				"Himu Mama"
+			],
+			"programmingTechnologies": [
+				""
+			],
+			"hobbies": [
+				"Sleeping",
+				"Talking",
+				"Swimming"
+			]
+		},
+		"activityData": {
+			"friends": [
+				"userId",
+				"userId"
+			],
+			"pendingFriendRequests": [
+				"userId",
+				"userId"
+			],
+			"following": [
+				"userId",
+				"userId"
+			],
+			"followers": [
+				"userId",
+				"userId"
+			],
+			"groups": [
+				"groupId",
+				"groupId"
+			],
+			"purchaseHistory": [
+				{
+					"productId": "123",
+					"productName": "Himu Mama",
+					"purchasePrice": "59",
+					"purchaseDate": "10/12/21"
+				}
+			]
+		}
+	},
+	{
+		"userId": 3,
+		"userEmail": "juwel@hm.com",
+		"photoURL": "https://scontent.fzyl1-1.fna.fbcdn.net/v/t39.30808-1/p160x160/268456117_3819242881634344_374790231152781052_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=7206a8&_nc_eui2=AeEE80oVqxW2Onvqu_A9wZ53rWViqz9jHVetZWKrP2MdVz5nAe6s0Xu87apZIWr72xz-AeB5qEladgg8pkd5x7KJ&_nc_ohc=TwBwt0yy52cAX_qfTay&_nc_ht=scontent.fzyl1-1.fna&oh=00_AT8Nr47IV0i-ZP3MnEVl3HPPgRN36I7x4Yxe68sqJTs9fQ&oe=61C2FDF5",
+		"bannerImageURL": "https://scontent.fzyl1-1.fna.fbcdn.net/v/t1.6435-9/71209696_3033891390169501_9129351582087905280_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeFtGC7tWQ8Wajkgt-iWIHAiOYBTHxnPHKA5gFMfGc8coPxK3blnCmwHqyqzfRu_78Z2pbPoTqaUbTvZpwrJNI92&_nc_ohc=3MxeVdx1Ux0AX-V88wR&_nc_ht=scontent.fzyl1-1.fna&oh=00_AT84NSoNEkAIkjbBahDM3lU3jw_qfaPhiNis0YFa9N1YnA&oe=61E272AF",
+		"password": "123456",
+		"basicInfo": {
+			"firstName": "Juwel",
+			"lastName": "Hussen",
+			"birthDate": "10/03/1994",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "+8801765354545",
+			"website": "www.Juwel.com",
+			"socialSites": [
+				{
+					"socialSiteName": "Facebook",
+					"link": "https://www.facebook.com/juayel.hussen"
+				}
+			],
+			"address": {
+				"street": "Ekorchoi, Jagannathpur",
+				"city": "Sylhet",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "Bangladesh Chatro league",
+				"jobTitle": "Organizational Secretary",
+				"startDate": "01/12/21",
+				"endData": "Running..."
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [
+				"Football",
+				"Cricket",
+				"Mini Football"
+			],
+			"books": [
+				"Bangla Shohoj Path",
+				"English Grammar"
+			],
+			"programmingTechnologies": [
+				""
+			],
+			"hobbies": [
+				"Speaking",
+				"Playing",
+				"Politics"
+			]
+		},
+		"activityData": {
+			"friends": [
+				"userId",
+				"userId"
+			],
+			"pendingFriendRequests": [
+				"userId",
+				"userId"
+			],
+			"following": [
+				"userId",
+				"userId"
+			],
+			"followers": [
+				"userId",
+				"userId"
+			],
+			"groups": [
+				"groupId",
+				"groupId"
+			],
+			"purchaseHistory": [
+				{
+					"productId": "123",
+					"productName": "English Grammar",
+					"purchasePrice": "45",
+					"purchaseDate": "22/11/21"
 				}
 			]
 		}

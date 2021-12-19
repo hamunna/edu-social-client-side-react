@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from '@mui/material';
 import FeedSingleStatusBox from '../FeedSingleStatusBox/FeedSingleStatusBox';
 
 const FeedStatusBoxes = () => {
 	const [statuses, setStatuses] = useState([]);
 
 	useEffect(() => {
-		fetch("./statusData.json")
+		fetch("http://localhost:5000/statuses")
 			.then(res => res.json())
 			.then(data => setStatuses(data));
 	}, []);
