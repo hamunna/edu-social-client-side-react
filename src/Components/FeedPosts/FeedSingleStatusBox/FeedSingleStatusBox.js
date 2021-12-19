@@ -10,7 +10,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Badge, Button, Card, ImageList, ImageListItem, ListItem, ListItemAvatar, ListItemText, TextField } from '@mui/material';
@@ -66,12 +65,12 @@ const FeedSingleStatusBox = ({ status }) => {
 
 			{
 				statusImages.length > 1 ? <ImageList
-					key={statusId}
+					key={statusId + 1000}
 					sx={{ width: '100%' }}
 					cols={2}>
 					{
 						statusImages.map(statusImage => (
-							<ImageListItem>
+							<ImageListItem key={statusId}>
 								<img
 									src={statusImage}
 									alt=""
@@ -81,16 +80,15 @@ const FeedSingleStatusBox = ({ status }) => {
 
 						))}
 				</ImageList>
-
 					:
 					statusImages.map(statusImage => <img
+						key={statusId + 100}
 						src={statusImage}
 						style={{ width: '100%' }}
 						alt=""
 						loading="lazy"
 					/>)
 			}
-
 
 			<CardActions disableSpacing>
 				<IconButton aria-label="Loves">
@@ -121,7 +119,9 @@ const FeedSingleStatusBox = ({ status }) => {
 
 
 				{
-					statusCollections.comments.map(comment => <Box sx={{ backgroundColor: "#f7f7f7", borderRadius: 3, mb: 2 }}>
+					statusCollections.comments.map(comment => <Box
+						key={statusId}
+						sx={{ backgroundColor: "#f7f7f7", borderRadius: 3, mb: 2 }}>
 						<ListItem>
 							<ListItemAvatar sx={{ mr: -1 }}>
 								<Avatar

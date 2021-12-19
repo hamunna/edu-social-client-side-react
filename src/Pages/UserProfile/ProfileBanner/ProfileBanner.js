@@ -6,27 +6,40 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 
 
-const bannerBg = {
-	backgroundImage: `url("https://www.dlapiper.com/~/media/images/news/2018/programming_code_technology_computerwebsite_banner_432008923.jpg")`,
-	backgroundRepeat: 'no-repeat',
-	backgroundSize: 'cover',
-	height: '420px',
-	marginTop: '50px',
-	marginBottom: '50px',
-	borderRadius: '20px',
-	padding: '30px',
-	boxShadow: 'inset 0px -260px 150px -100px #000',
-	boxSizing: 'border-box',
-	display: 'flex',
-	alignItems: 'end',
-}
+// const bannerBg = {
+// 	backgroundImage: `url("https://www.dlapiper.com/~/media/images/news/2018/programming_code_technology_computerwebsite_banner_432008923.jpg")`,
+// 	backgroundRepeat: 'no-repeat',
+// 	backgroundSize: 'cover',
+// 	height: '420px',
+// 	marginTop: '50px',
+// 	marginBottom: '50px',
+// 	borderRadius: '20px',
+// 	padding: '30px',
+// 	boxShadow: 'inset 0px -260px 150px -100px #000',
+// 	boxSizing: 'border-box',
+// 	display: 'flex',
+// 	alignItems: 'end',
+// }
 
 const ProfileBanner = ({ user }) => {
 
 	const { userId, userEmail, photoURL, basicInfo, contactInfo, workExperience, activityData, bannerImageURL } = user;
 
 	return (
-		<Box sx={bannerBg}>
+		<Box sx={{
+			backgroundImage: `url(${bannerImageURL})`,
+			backgroundRepeat: 'no-repeat',
+			backgroundSize: 'cover',
+			height: '420px',
+			mt: 3,
+			mb: 3,
+			borderRadius: 8,
+			padding: '30px',
+			boxShadow: 'inset 0px -260px 150px -100px #000',
+			boxSizing: 'border-box',
+			display: 'flex',
+			alignItems: 'end',
+		}}>
 
 			<ListItem>
 				<ListItemAvatar sx={{ mr: 2 }}>
@@ -49,6 +62,7 @@ const ProfileBanner = ({ user }) => {
 
 						{
 							contactInfo.socialSites.map(socialSite => <SocialIcon
+								key={socialSite.link}
 								network={socialSite.socialSiteName.toLowerCase()}
 								url={socialSite.link}
 								style={{ height: 30, width: 30, border: '1px solid #fff', borderRadius: '50%', backgroundColor: '#fff', marginRight: '10px' }} />)

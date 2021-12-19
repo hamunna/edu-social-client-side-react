@@ -199,7 +199,7 @@ const Header = () => {
 
 				<Typography sx={{ fontSize: 26, fontWeight: 700, margin: 'auto' }}>
 					<span className="theme-primary-drk-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
-					<span style={{ color: '#ccc' }}>Social</span>
+					<span style={{ color: '#fff' }}>Social</span>
 				</Typography>
 
 			</Toolbar>
@@ -268,7 +268,7 @@ const Header = () => {
 					<Box sx={{ position: 'relative', left: -24, top: 0 }} className="theme-primary-drk-bg">
 						<IconButton
 							size="large"
-							edge="center"
+							// edge="center"
 							color="inherit"
 							aria-label="open drawer"
 							sx={{ height: 80, width: 100 }}
@@ -304,7 +304,7 @@ const Header = () => {
 						sx={{ display: { xs: 'none', sm: 'block', fontSize: 26, fontWeight: 700, margin: 'auto' } }}
 					>
 						<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
-						<span style={{ color: '#ccc' }}>Social</span>
+						<span style={{ color: '#fff' }}>Social</span>
 					</Typography>
 
 					<Search sx={{ mx: 'auto' }}>
@@ -340,7 +340,7 @@ const Header = () => {
 						</IconButton>
 						<IconButton
 							size="large"
-							edge="end"
+							// edge="end"
 							aria-label="account of current user"
 							aria-controls={menuId}
 							aria-haspopup="true"
@@ -367,7 +367,7 @@ const Header = () => {
 					<Box sx={{ position: 'relative', right: -24, top: 0 }} className="messenger-primary-lt-bg">
 						<IconButton
 							size="large"
-							edge="center"
+							// edge="center"
 							color="inherit"
 							aria-label="open drawer"
 							sx={{ height: 80, width: 100 }}
