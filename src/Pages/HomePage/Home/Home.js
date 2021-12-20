@@ -5,7 +5,7 @@ import Header from '../../../Components/Shared/Header/Header';
 import PostBox from '../../../Components/Shared/PostBlock/PostBox/PostBox';
 import RightSideBar from '../../../Components/Shared/SideBar/RightSideBar/RightSideBar';
 
-const Home = () => {
+const Home = ({ dbUsers }) => {
 	return (
 		<>
 			<Header />
@@ -18,7 +18,7 @@ const Home = () => {
 
 						<PostBox />
 
-						<FeedStatusBoxes />
+						<FeedStatusBoxes dbUsers={dbUsers} />
 
 					</Box>
 

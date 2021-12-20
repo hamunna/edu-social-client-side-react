@@ -26,14 +26,21 @@ const ExpandMore = styled((props) => {
 	}),
 }));
 
-const FeedSingleStatusBox = ({ status }) => {
-	const { statusText, statusImages, statusCollections, _id } = status;
-
+const FeedSingleStatusBox = ({ status, dbUsers }) => {
+	const { statusText, statusImages, statusCollections, _id, statusPosterId } = status;
 	const [expanded, setExpanded] = React.useState(false);
+
+	const [dbUserData, setDbUserData] = useState([]);
+	useEffect(() => {
+		const findUser = dbUsers.find(dbUser => dbUser._id === statusPosterId);
+		setDbUserData(findUser);
+		// console.log(findUser);
+	}, [dbUsers]);
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
 	};
+
 
 	return (
 		<Card sx={{ backgroundColor: '#fff', borderRadius: 2, p: 1, mb: 4 }}>
@@ -43,7 +50,7 @@ const FeedSingleStatusBox = ({ status }) => {
 					<Avatar
 						sx={{ bgcolor: red[500], border: '1px solid var(--tpdc)' }}
 						aria-label="recipe"
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Sd1DjBd8dVAWNrUbZn7cpCz9-AET5gtpjcFGbOsYgx3NXwHZCy_qstvlsFbfZpRfxQQ&usqp=CAU"
+						src={dbUserData?.photoURL}
 					>
 
 					</Avatar>
@@ -53,7 +60,7 @@ const FeedSingleStatusBox = ({ status }) => {
 						<MoreVertIcon />
 					</IconButton>
 				}
-				title="Elon Musk"
+				title={`${dbUserData?.basicInfo?.firstName} ${dbUserData?.basicInfo?.lastName}`}
 				subheader="September 14, 2021"
 			/>
 
@@ -65,12 +72,14 @@ const FeedSingleStatusBox = ({ status }) => {
 
 			{
 				statusImages.length > 1 ? <ImageList
-					key={_id + 1000}
+					key={_id}
 					sx={{ width: '100%' }}
-					cols={2}>
+					cols={2}
+				>
 					{
 						statusImages.map(statusImage => (
-							<ImageListItem key={_id}>
+							<ImageListItem
+								key={_id}>
 								<img
 									src={statusImage}
 									alt=""
@@ -82,7 +91,7 @@ const FeedSingleStatusBox = ({ status }) => {
 				</ImageList>
 					:
 					statusImages.map(statusImage => <img
-						key={_id + 100}
+						key={_id}
 						src={statusImage}
 						style={{ width: '100%' }}
 						alt=""

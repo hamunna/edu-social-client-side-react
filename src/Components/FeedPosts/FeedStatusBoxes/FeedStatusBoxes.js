@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FeedSingleStatusBox from '../FeedSingleStatusBox/FeedSingleStatusBox';
 
-const FeedStatusBoxes = () => {
+const FeedStatusBoxes = ({ dbUsers }) => {
 	const [statuses, setStatuses] = useState([]);
 
 	useEffect(() => {
@@ -9,6 +9,8 @@ const FeedStatusBoxes = () => {
 			.then(res => res.json())
 			.then(data => setStatuses(data));
 	}, []);
+
+
 	return (
 
 		<>
@@ -16,6 +18,7 @@ const FeedStatusBoxes = () => {
 				statuses.map(status => <FeedSingleStatusBox
 					key={status._id}
 					status={status}
+					dbUsers={dbUsers}
 				/>)
 			}
 		</>

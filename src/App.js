@@ -12,27 +12,39 @@ import Register from './Pages/Register/Register';
 import PrivateRoute from './Private/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
 import OwnUserProfile from './Pages/UserProfile/OwnUserProfile/OwnUserProfile';
+import { UserProvider } from './context/UserProvider';
+import { useEffect, useState } from 'react';
 
 function App() {
-  return (
-    <AuthProvider>
-      <Router>
+  const [dbUsers, setDbUsers] = useState([]);
 
-        <Routes>
-         
-          {/* <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then(res => res.json())
+      .then(data => setDbUsers(data));
+  }, []);
+
+  return (
+    // <UserProvider>
+      <AuthProvider>
+        <Router>
+
+          <Routes>
+
+            {/* <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} /> */}
 
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/profile" element={<ProfilePage />} /> */}
-          <Route path="/myProfile/:userId" element={<OwnUserProfile />} />
+            <Route path="/" element={<Home dbUsers={dbUsers} />} />
+            {/* <Route path="/profile" element={<ProfilePage />} /> */}
+            <Route path="/myProfile/:userId" element={<OwnUserProfile />} />
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-        </Routes>
-      </Router>
-    </AuthProvider>
+          </Routes>
+        </Router>
+      </AuthProvider>
+    // {/* </UserProvider> */}
   );
 }
 
