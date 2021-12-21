@@ -29,8 +29,6 @@ const OwnUserProfile = () => {
 			<Header />
 			<Toolbar sx={{ height: 80 }} />
 
-			<h1>This is Own User Profile Page</h1>
-
 			<Container sx={{ mb: 60 }}>
 
 				<Box

@@ -10,32 +10,110 @@ import Select from '@mui/material/Select';
 import useFirebase from '../../hooks/useFirebase';
 import useAuth from '../../hooks/useAuth';
 
+const initialDbUserData = {
+	email: "",
+	password: "",
+	photoURL: "",
+	bannerImageURL: "",
+	basicInfo: {
+		firstName: "",
+		lastName: "",
+		birthDate: "",
+		gender: ""
+	},
+	contactInfo: {
+		phone: "",
+		website: "",
+		socialSites: [
+			{
+				socialSiteName: "",
+				link: ""
+			}
+		],
+		address: {
+			street: "",
+			city: "",
+			country: "Bangladesh"
+		}
+	},
+	workExperience: [
+		{
+			companyName: "",
+			jobTitle: "",
+			startDate: "",
+			endData: ""
+		}
+	],
+	hobbiesInterests: {
+		sports: [],
+		books: [],
+		programmingTechnologies: [],
+		hobbies: []
+	},
+	activityData: {
+		friends: [],
+		pendingFriendRequests: [],
+		following: [],
+		followers: [],
+		groups: [],
+		purchaseHistory: [
+			{
+				productId: "",
+				productName: "",
+				purchasePrice: "",
+				purchaseDate: ""
+			}
+		]
+	}
+}
+
 const Register = () => {
 	const [gender, setGender] = React.useState('');
 	const [city, setCity] = React.useState('');
 	const { user, registerUser } = useAuth();
-	const [loginData, setLoginData] = useState([]);
+	const [registerData, setRegisterData] = useState(initialDbUserData);
+
+	console.log(registerData);
 
 	const navigate = useNavigate();
 
 	// Handle Inputs with onBlur method
-
-	// Note:: Some input uses onChange to avoid Browser AutoFill
+	// Note:: Some input used onChange to avoid Browser AutoFill
 	const handleOnBlur = e => {
 		const field = e.target.name;
 		const value = e.target.value;
 
-		const newLoginData = { ...loginData };
-		newLoginData[field] = value;
+		const newRegisterData = { ...registerData };
 
-		console.log(newLoginData);
-		setLoginData(newLoginData);
+		if (field === "firstName" || field === "lastName" || field === "birthDate" || field === "gender") {
+			newRegisterData.basicInfo[field] = value;
+			// newRegisterData[field] = '';
+		}
+
+		if (field === 'city') {
+			newRegisterData.contactInfo.address[field] = value;
+			
+		}
+
+		if (field === "email" || field === "photoURL" || field === "bannerImageURL" || field === "password") {
+			
+			newRegisterData[field] = value;
+		}
+
+
+		console.log(newRegisterData);
+		setRegisterData(newRegisterData);
 	}
 
 	const handleRegisterUserSubmit = e => {
 		e.preventDefault();
-		registerUser(loginData.email, loginData.password, loginData.firstName + ' ' + loginData.lastName, navigate("/"));
+
+		registerUser(registerData, navigate)
+
 		alert("Registered Successfully!");
+
+		console.log("After Register: " + registerData);
+		console.log("After Register: " + typeof registerData);
 
 		e.target.reset();
 	}
@@ -135,8 +213,8 @@ const Register = () => {
 								sx={{ width: '49%' }}
 								fullWidth
 								type="url"
-								label="Image-URL"
-								name="imageURL"
+								label="Photo-URL"
+								name="photoURL"
 								variant="standard"
 								onChange={handleOnBlur}
 								required

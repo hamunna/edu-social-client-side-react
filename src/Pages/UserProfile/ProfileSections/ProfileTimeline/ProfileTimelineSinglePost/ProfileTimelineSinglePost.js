@@ -28,7 +28,7 @@ const ExpandMore = styled((props) => {
 
 const ProfileTimelineSinglePost = ({ timelinePost, user }) => {
 	const { statusText, statusImages, statusCollections, _id } = timelinePost;
-	const { userId, userEmail, photoURL, basicInfo, contactInfo, workExperience, activityData } = user;
+	const { userId, email, photoURL, basicInfo, contactInfo, workExperience, activityData } = user;
 
 	const [expanded, setExpanded] = React.useState(false);
 

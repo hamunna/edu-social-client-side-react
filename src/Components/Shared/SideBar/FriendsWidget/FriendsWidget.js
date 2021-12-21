@@ -26,15 +26,15 @@ const FriendsWidget = () => {
 				<List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 
 					{
-						friends.map(friend => <ListItem key={friend._id}>
+						friends.map(friend => <ListItem key={friend?._id}>
 							<ListItemAvatar sx={{ mr: 2 }}>
 								<Avatar
 									alt=""
-									src={friend.photoURL}
+									src={friend?.photoURL}
 									sx={{ width: 48, height: 48 }}
 								/>
 							</ListItemAvatar>
-							<ListItemText primary={`${friend.basicInfo.firstName} ${friend.basicInfo.lastName}`} secondary="Jan 9, 2014" />
+							<ListItemText primary={`${friend?.basicInfo?.firstName} ${friend?.basicInfo?.lastName}`} secondary="Jan 9, 2014" />
 						</ListItem>
 						)
 					}

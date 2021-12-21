@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import InfoIcon from '@mui/icons-material/Info';
 
 const ProfileBasicInfoCard = ({ user }) => {
-	const { userId, userEmail, photoURL, basicInfo, contactInfo, workExperience, activityData } = user;
+	const { userId, email, photoURL, basicInfo, contactInfo, workExperience, activityData } = user;
 	
 	return (
 		<TableContainer component={Paper} sx={{mb: 3, borderRadius: 2}}>
@@ -42,7 +42,7 @@ const ProfileBasicInfoCard = ({ user }) => {
 
 					<TableRow key={"row.name"} sx={{border: 'none'}}>
 						<TableCell align="left" sx={{ width: '20%', fontWeight: 700, border: 'none'}}>Email</TableCell>
-						<TableCell align="left" sx={{border: 'none'}}>{userEmail}</TableCell>
+						<TableCell align="left" sx={{border: 'none'}}>{email}</TableCell>
 					</TableRow>
 
 					<TableRow key={"row.name"} sx={{border: 'none'}}>

@@ -221,7 +221,7 @@ const Header = () => {
 			<List>
 
 				{
-					dbUsers.map(dbUser => user?.email === dbUser?.userEmail && <ListItem style={linkStyle} as={Link} to={`/myProfile/${dbUser._id}`} button>
+					dbUsers.map(dbUser => user?.email === dbUser?.email && <ListItem style={linkStyle} as={Link} to={`/myProfile/${dbUser._id}`} button>
 							<ListItemIcon>
 								<AccountCircleIcon />
 							</ListItemIcon>

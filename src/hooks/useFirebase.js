@@ -10,12 +10,13 @@ const useFirebase = () => {
 	const auth = getAuth();
 
 	// New User Register with Email & Password
-	const registerUser = (email, password, name, navigate) => {
-		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
-				// Signed in 
-				const user = userCredential.user;
-				// ...
+	const registerUser = (newUser, navigate) => {
+		// const name = firstName +" "+ lastName;
+		createUserWithEmailAndPassword(auth, newUser.email, newUser.password, navigate)
+			.then((userCredential) => {				
+
+				saveUser(newUser);
+
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -42,11 +43,11 @@ const useFirebase = () => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
-			  
+
 				setUser(user);
 
 			} else {
-			  
+
 				setUser({});
 			}
 		});
@@ -60,6 +61,18 @@ const useFirebase = () => {
 		}).catch((error) => {
 			// An error happened.
 		});
+	}
+
+	// Save Registered User Data to Database
+	const saveUser = (newUser) => {
+		// const user = newUser;
+		fetch('http://localhost:5000/users', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(newUser)
+		})
 	}
 
 	return {
