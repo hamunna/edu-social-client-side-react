@@ -2,8 +2,8 @@ import React from 'react';
 
 const MediaAlbumPosting = () => {
 	return (
-		<div>
-			<h1>Medial Album Posting</h1>
+		<div style={{height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'crimson'}}>
+			<h1>Medial Album Uploading Box Coming Soon...</h1>
 		</div>
 	);
 };

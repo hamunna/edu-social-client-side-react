@@ -17,7 +17,7 @@ const ProfileTimelinePosts = ({ user }) => {
 
 			<PostBox />
 			{
-				timelinePosts.map(timelinePost => user?._id === timelinePost?.statusPosterId && <ProfileTimelineSinglePost
+				timelinePosts.map(timelinePost => user?.email === timelinePost?.statusPosterEmail && <ProfileTimelineSinglePost
 					key={timelinePost?._id}
 					timelinePost={timelinePost}
 					user={user}

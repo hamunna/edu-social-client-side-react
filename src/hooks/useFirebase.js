@@ -12,7 +12,7 @@ const useFirebase = () => {
 	// New User Register with Email & Password
 	const registerUser = (newUser, navigate) => {
 		// const name = firstName +" "+ lastName;
-		createUserWithEmailAndPassword(auth, newUser.email, newUser.password, navigate)
+		createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
 			.then((userCredential) => {				
 
 				saveUser(newUser);
@@ -23,6 +23,8 @@ const useFirebase = () => {
 				const errorMessage = error.message;
 				// ..
 			});
+		
+		navigate('/');
 	}
 
 	// Login User with Email & Password

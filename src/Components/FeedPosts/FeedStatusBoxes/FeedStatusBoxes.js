@@ -16,7 +16,7 @@ const FeedStatusBoxes = ({ dbUsers }) => {
 		<>
 			{
 				statuses.map(status => <FeedSingleStatusBox
-					key={status._id}
+					key={status?._id}
 					status={status}
 					dbUsers={dbUsers}
 				/>)

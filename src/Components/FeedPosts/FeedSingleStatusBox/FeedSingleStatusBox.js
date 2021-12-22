@@ -27,12 +27,13 @@ const ExpandMore = styled((props) => {
 }));
 
 const FeedSingleStatusBox = ({ status, dbUsers }) => {
-	const { statusText, statusImages, statusCollections, _id, statusPosterId } = status;
+	const { statusText, statusImages, statusCollections, _id, statusPosterId, statusPosterEmail } = status;
 	const [expanded, setExpanded] = React.useState(false);
 
 	const [dbUserData, setDbUserData] = useState([]);
 	useEffect(() => {
-		const findUser = dbUsers.find(dbUser => dbUser._id === statusPosterId);
+		// const findUser = dbUsers.find(dbUser => dbUser._id === statusPosterId);
+		const findUser = dbUsers.find(dbUser => dbUser.email === statusPosterEmail);
 		setDbUserData(findUser);
 		// console.log(findUser);
 	}, [dbUsers]);
