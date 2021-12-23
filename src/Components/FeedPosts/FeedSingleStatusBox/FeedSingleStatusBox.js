@@ -29,14 +29,24 @@ const ExpandMore = styled((props) => {
 
 const FeedSingleStatusBox = ({ status, dbUsers }) => {
 	const { statusText, statusImages, statusCollections, _id, statusPosterId, statusPosterEmail } = status;
+
+	const { comments } = statusCollections
 	const [expanded, setExpanded] = React.useState(false);
 
 	const [dbUserData, setDbUserData] = useState([]);
+	const [commentData, setCommentData] = useState([]);
 
+	// Status Poster Data
 	useEffect(() => {
 		const findUser = dbUsers.find(dbUser => dbUser.email === statusPosterEmail);
 		setDbUserData(findUser);
 	}, [dbUsers]);
+
+	// // Commenter Data
+	// useEffect(() => {
+	// 	const findCommenter = comments.find(comment => dbUsers.find(dbUser => dbUser.email === comment.userEmail )  );
+	// 	setCommentData(findCommenter);
+	// }, [status]);
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
@@ -130,16 +140,22 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 					statusCollections?.comments?.map(comment => <Box
 						key={_id}
 						sx={{ backgroundColor: "#f7f7f7", borderRadius: 3, mb: 2 }}>
-						<ListItem>
-							<ListItemAvatar sx={{ mr: -1 }}>
-								<Avatar
-									alt=""
-									src="https://media.todaybirthdays.com/2015/09/28/mark-zuckerberg.jpg"
-									sx={{ width: 36, height: 36 }}
-								/>
-							</ListItemAvatar>
-							<ListItemText secondary="Mark Zuckerberg" sx={{ fontWeight: 700 }} />
-						</ListItem>
+						
+						{
+							dbUsers.map(dbUser => dbUser?.email === comment.userEmail && <ListItem>
+								<ListItemAvatar sx={{ mr: -1 }}>
+									<Avatar
+										alt=""
+										src={dbUser?.photoURL}
+										// src={comment?.userEmail === dbUserData && dbUserData?.photoURL}
+										sx={{ width: 36, height: 36, border: '1px solid var(--tpdc)' }}
+									/>
+								</ListItemAvatar>
+								<ListItemText
+									secondary={`${dbUser?.basicInfo?.firstName} ${dbUser?.basicInfo?.lastName}`}
+									sx={{ fontWeight: 700 }} />
+							</ListItem>)
+						}
 
 						<Typography variant="body1" sx={{ px: 8, pb: 2 }}>
 							{comment.statusCommentText}
