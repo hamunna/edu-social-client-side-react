@@ -21,7 +21,7 @@ const ProfileTimelinePosts = ({ user }) => {
 					key={timelinePost?._id}
 					timelinePost={timelinePost}
 					user={user}
-				/>)
+				/>).reverse()
 			}
 		</>
 	);

@@ -19,7 +19,7 @@ const FeedStatusBoxes = ({ dbUsers }) => {
 					key={status?._id}
 					status={status}
 					dbUsers={dbUsers}
-				/>)
+				/>).reverse()
 			}
 		</>
 
