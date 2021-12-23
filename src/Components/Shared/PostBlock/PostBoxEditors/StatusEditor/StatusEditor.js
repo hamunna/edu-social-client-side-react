@@ -47,7 +47,6 @@ const StatusEditor = () => {
 		})
 	}
 
-
 	return (
 		<Box sx={{ pb: 3 }}>
 			<form onSubmit={handleOnSubmit} style={{ maxWidth: '100%', p: 3 }}>

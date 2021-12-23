@@ -14,6 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Badge, Button, Card, ImageList, ImageListItem, ListItem, ListItemAvatar, ListItemText, TextField } from '@mui/material';
 import { Box } from '@mui/system';
+import FeedPostCommentInputBox from '../FeedPostCommentInputBox/FeedPostCommentInputBox';
 
 const ExpandMore = styled((props) => {
 	const { expand, ...other } = props;
@@ -31,11 +32,10 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 	const [expanded, setExpanded] = React.useState(false);
 
 	const [dbUserData, setDbUserData] = useState([]);
+
 	useEffect(() => {
-		// const findUser = dbUsers.find(dbUser => dbUser._id === statusPosterId);
 		const findUser = dbUsers.find(dbUser => dbUser.email === statusPosterEmail);
 		setDbUserData(findUser);
-		// console.log(findUser);
 	}, [dbUsers]);
 
 	const handleExpandClick = () => {
@@ -72,7 +72,7 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 			</CardContent>
 
 			{
-				statusImages.length > 1 ? <ImageList
+				statusImages?.length > 1 ? <ImageList
 					key={_id}
 					sx={{ width: '100%' }}
 					cols={2}
@@ -118,18 +118,16 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 				<Typography
 					sx={{ textAlign: 'right', cursor: 'pointer' }}
 					onClick={handleExpandClick}
-				>{statusCollections.comments.length} Comments</Typography>
-
+				>{statusCollections?.comments?.length} Comments</Typography>
 
 			</CardActions>
 
 
 			{/* Status Comments Section */}
-			<Collapse in={expanded} timeout="auto" unmountOnExit sx={{ border: '1px solid #eee', p: 1 }}>
-
+			<Collapse key={_id} in={expanded} timeout="auto" unmountOnExit sx={{ border: '1px solid #eee', p: 1 }}>
 
 				{
-					statusCollections.comments.map(comment => <Box
+					statusCollections?.comments?.map(comment => <Box
 						key={_id}
 						sx={{ backgroundColor: "#f7f7f7", borderRadius: 3, mb: 2 }}>
 						<ListItem>
@@ -151,22 +149,7 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 					)
 				}
 
-				<form style={{ display: 'flex' }} autoComplete='off'>
-					<Box
-						sx={{
-							width: '100%',
-							borderRadius: 0,
-						}}
-					>
-						<TextField
-							type="text"
-							fullWidth
-							label="Write your comment here..."
-						/>
-					</Box>
-
-					<Button variant="contained" className="theme-primary-btn">Comment</Button>
-				</form>
+				<FeedPostCommentInputBox status={status} statusID={_id} />
 
 			</Collapse>
 		</Card >
