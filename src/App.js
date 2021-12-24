@@ -26,24 +26,27 @@ function App() {
 
   return (
     // <UserProvider>
-      <AuthProvider>
-        <Router>
+    <AuthProvider>
+      <Router>
 
-          <Routes>
+        <Routes>
 
-            {/* <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+          {/* <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} /> */}
 
-            <Route path="/" element={<Home dbUsers={dbUsers} />} />
-            {/* <Route path="/profile" element={<ProfilePage />} /> */}
-            <Route path="/myProfile/:userId" element={<OwnUserProfile />} />
+          <Route path="/" element={<Home dbUsers={dbUsers} />} />
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+          <Route path="/myProfile/:userId" element={<OwnUserProfile />} />
 
-          </Routes>
-        </Router>
-      </AuthProvider>
+          <Route path="/userProfile/:userId" element={<ProfilePage dbUsers={dbUsers} />} />
+
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/register" element={<Register />} />
+
+        </Routes>
+      </Router>
+    </AuthProvider>
     // {/* </UserProvider> */}
   );
 }

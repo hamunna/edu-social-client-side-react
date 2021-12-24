@@ -1,42 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container } from '@mui/material';
-import ProfileBanner from '../ProfileBanner/ProfileBanner';
 import Toolbar from '@mui/material/Toolbar';
+import ProfileBanner from '../ProfileBanner/ProfileBanner';
 import ProfileTabs from '../ProfileTabs/ProfileTabs';
 import Header from '../../../Components/Shared/Header/Header';
+import { useParams } from 'react-router-dom';
 
 const ProfilePage = () => {
-	const [users, setUsers] = useState([]);
+	const [dbUsers, setDbUsers] = useState([]);
+	const [dbUserCollection, setDbUserCollection] = useState([]);
+	let { userId } = useParams();
+
 
 	useEffect(() => {
 		fetch("http://localhost:5000/users")
 			.then(res => res.json())
-			.then(data => setUsers(data));
+			.then(data => setDbUsers(data));
 	}, []);
+
+	useEffect(() => {
+		const findUser = dbUsers.find(dbUser => dbUser._id === userId);
+		setDbUserCollection(findUser);
+		console.log(findUser);
+	}, [dbUsers]);
 
 	return (
 		<>
 			<Header />
 			<Toolbar sx={{ height: 80 }} />
 
-			<h1>This is Normal User Profile Page</h1>
-
 			<Container sx={{ mb: 60 }}>
-				{
-					users.map(user => <Box
-						key={user.userId}
-					>
-						<ProfileBanner
-							user={user}
-						/>
-						<ProfileTabs
-							user={user}
-						/>
-					</Box>
 
-					)
-				}
-
+				<Box
+					// key={dbUserCollection?._id}
+				>
+					<ProfileBanner
+						user={dbUserCollection}
+					/>
+					<ProfileTabs
+						user={dbUserCollection}
+					/>
+				</Box>
 
 			</Container>
 		</>

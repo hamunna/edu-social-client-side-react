@@ -2,6 +2,7 @@ import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText, Typograph
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { Link } from 'react-router-dom';
 
 const FriendsWidget = () => {
 	const [friends, setFriends] = useState([]);
@@ -10,7 +11,13 @@ const FriendsWidget = () => {
 		fetch("http://localhost:5000/users")
 			.then(res => res.json())
 			.then(data => setFriends(data))
-	}, [])
+	}, []);
+
+	const linkStyle = {
+		textDecoration: 'none',
+		color: '#000',
+		fontWeight: 700,
+	}
 
 	return (
 
@@ -26,7 +33,7 @@ const FriendsWidget = () => {
 				<List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
 
 					{
-						friends.map(friend => <ListItem key={friend?._id}>
+						friends.map(friend => <ListItem key={friend?._id} style={linkStyle} as={Link} to={`/userProfile/${friend?._id}`}>
 							<ListItemAvatar sx={{ mr: 2 }}>
 								<Avatar
 									alt=""
@@ -38,7 +45,6 @@ const FriendsWidget = () => {
 						</ListItem>
 						)
 					}
-
 
 				</List>
 			</Box>

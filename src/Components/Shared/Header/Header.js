@@ -81,7 +81,7 @@ const Header = () => {
 			.then(res => res.json())
 			.then(data => setDbUsers(data));
 	}, []);
-	
+
 
 	// const dbUser = dbUsers.map(dbUser => dbUser)
 
@@ -212,8 +212,12 @@ const Header = () => {
 			<Toolbar className="theme-primary-drk-bg" sx={{ height: 80 }}>
 
 				<Typography sx={{ fontSize: 26, fontWeight: 700, margin: 'auto' }}>
-					<span className="theme-primary-drk-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
-					<span style={{ color: '#fff' }}>Social</span>
+
+					<Link to="/" style={{ textDecoration: 'none' }}>
+						<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
+						<span style={{ color: '#fff' }}>Social</span>
+					</Link>
+
 				</Typography>
 
 			</Toolbar>
@@ -222,12 +226,12 @@ const Header = () => {
 
 				{
 					dbUsers.map(dbUser => user?.email === dbUser?.email && <ListItem style={linkStyle} as={Link} to={`/myProfile/${dbUser._id}`} button>
-							<ListItemIcon>
-								<AccountCircleIcon />
-							</ListItemIcon>
+						<ListItemIcon>
+							<AccountCircleIcon />
+						</ListItemIcon>
 
-							<ListItemText>Profile</ListItemText>
-						</ListItem>
+						<ListItemText>My Profile</ListItemText>
+					</ListItem>
 					)
 				}
 
@@ -320,8 +324,12 @@ const Header = () => {
 						component="div"
 						sx={{ display: { xs: 'none', sm: 'block', fontSize: 26, fontWeight: 700, margin: 'auto' } }}
 					>
-						<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
-						<span style={{ color: '#fff' }}>Social</span>
+
+						<Link to="/" style={{ textDecoration: 'none' }}>
+							<span className="theme-primary-lt-text" style={{ textShadow: '0 0 2px #fff' }}>Edu</span>
+							<span style={{ color: '#fff' }}>Social</span>
+						</Link>
+
 					</Typography>
 
 					<Search sx={{ mx: 'auto' }}>
