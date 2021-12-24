@@ -30,7 +30,7 @@ const FeedPostCommentInputBox = ({ status }) => {
 
 	}
 
-	const handleCommentSubmit = async e => {
+	const handleCommentSubmit = e => {
 		e.preventDefault();
 
 		const statusUpdate = comment;
@@ -51,7 +51,7 @@ const FeedPostCommentInputBox = ({ status }) => {
 				// console.log(data);
 			});
 
-		alert("Comment added successfully!")
+		alert("Comment added successfully!");
 		// console.log(comment._id)
 		e.target.reset();
 	}

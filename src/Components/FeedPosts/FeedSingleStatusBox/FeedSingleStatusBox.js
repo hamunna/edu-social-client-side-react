@@ -9,12 +9,12 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Badge, Button, Card, ImageList, ImageListItem, ListItem, ListItemAvatar, ListItemText, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import FeedPostCommentInputBox from '../FeedPostCommentInputBox/FeedPostCommentInputBox';
+import FeedPostLoveCalculate from '../FeedPostLoveCalculate/FeedPostLoveCalculate';
 
 const ExpandMore = styled((props) => {
 	const { expand, ...other } = props;
@@ -30,23 +30,16 @@ const ExpandMore = styled((props) => {
 const FeedSingleStatusBox = ({ status, dbUsers }) => {
 	const { statusText, statusImages, statusCollections, _id, statusPosterId, statusPosterEmail } = status;
 
-	const { comments } = statusCollections
 	const [expanded, setExpanded] = React.useState(false);
 
 	const [dbUserData, setDbUserData] = useState([]);
-	const [commentData, setCommentData] = useState([]);
 
-	// Status Poster Data
+	// Find Status Poster Data
 	useEffect(() => {
 		const findUser = dbUsers.find(dbUser => dbUser.email === statusPosterEmail);
 		setDbUserData(findUser);
 	}, [dbUsers]);
 
-	// // Commenter Data
-	// useEffect(() => {
-	// 	const findCommenter = comments.find(comment => dbUsers.find(dbUser => dbUser.email === comment.userEmail )  );
-	// 	setCommentData(findCommenter);
-	// }, [status]);
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
@@ -111,11 +104,8 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 			}
 
 			<CardActions disableSpacing>
-				<IconButton aria-label="Loves">
-					<Badge badgeContent={statusCollections.loves} color="secondary">
-						<FavoriteIcon sx={{ color: 'crimson' }} />
-					</Badge>
-				</IconButton>
+
+				<FeedPostLoveCalculate status={status} dbUsers={dbUsers} />
 
 				<ExpandMore
 					expand={expanded}
@@ -140,7 +130,7 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 					statusCollections?.comments?.map(comment => <Box
 						key={_id}
 						sx={{ backgroundColor: "#f7f7f7", borderRadius: 3, mb: 2 }}>
-						
+
 						{
 							dbUsers.map(dbUser => dbUser?.email === comment.userEmail && <ListItem>
 								<ListItemAvatar sx={{ mr: -1 }}>

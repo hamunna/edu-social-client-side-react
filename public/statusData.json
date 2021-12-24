@@ -8,22 +8,22 @@
 			"https://image.winudf.com/v2/image1/Y29tLm5hdHVyYWxpbWFnZWhkd2FsbHBhcGVyLnJ5cnNfc2NyZWVuXzBfMTU0MjM3MDgxNl8wODU/screen-0.jpg?fakeurl=1&type=.jpg"
 		],
 		"statusCollections": {
-			"loves": "22",
+			"loves": ["one", "two", "three", "four", "nine", "ten"],
 			"comments": [
 				{
-					"userEmail": "userEmail",
+					"userEmail": "sachin@hm.com",
 					"statusCommentText": "Very Nice will give you a complete account of the system"
 				},
 				{
-					"userEmail": "userEmail",
+					"userEmail": "juwel@hm.com",
 					"statusCommentText": "Wow! Good Idea will give you a complete account"
 				},
 				{
-					"userEmail": "userEmail",
+					"userEmail": "tamim@hm.com",
 					"statusCommentText": "Very Nice"
 				},
 				{
-					"userEmail": "userEmail",
+					"userEmail": "himu@hm.com",
 					"statusCommentText": "Wow! Good Idea"
 				}
 			]

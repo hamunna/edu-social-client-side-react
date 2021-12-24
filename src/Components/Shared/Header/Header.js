@@ -331,7 +331,7 @@ const Header = () => {
 						<StyledInputBase
 							placeholder="Search…"
 							inputProps={{ 'aria-label': 'search' }}
-							sx={{ width: '60vw' }}
+							sx={{ width: '30vw' }}
 						/>
 					</Search>
 

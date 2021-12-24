@@ -92,7 +92,7 @@ const ProfileTimelineSinglePost = ({ timelinePost, user }) => {
 
 			<CardActions disableSpacing>
 				<IconButton aria-label="Loves">
-					<Badge badgeContent={statusCollections.loves} color="secondary">
+					<Badge badgeContent={statusCollections.loves.length} color="secondary">
 						<FavoriteIcon sx={{ color: 'crimson' }} />
 					</Badge>
 				</IconButton>
