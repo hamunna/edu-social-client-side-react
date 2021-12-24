@@ -112,7 +112,6 @@ const FeedPostLoveCalculate = ({ status }) => {
 
 			<BootstrapDialog
 				onClose={handleClose}
-				aria-labelledby="customized-dialog-title"
 				open={open}
 			>
 
@@ -120,7 +119,7 @@ const FeedPostLoveCalculate = ({ status }) => {
 
 					Your Action is Saved Successfully!
 				</DialogContent>
-				
+
 				<DialogActions>
 					<Button autoFocus onClick={handleClose}>
 						Ok

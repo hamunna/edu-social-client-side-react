@@ -155,7 +155,7 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 					)
 				}
 
-				<FeedPostCommentInputBox status={status} statusID={_id} />
+				<FeedPostCommentInputBox status={status} handleExpandClick={handleExpandClick} />
 
 			</Collapse>
 		</Card >
