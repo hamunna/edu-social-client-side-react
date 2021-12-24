@@ -5,24 +5,17 @@ import useAuth from '../../../hooks/useAuth';
 
 
 
-const FeedPostLoveCalculate = ({ status, dbUsers }) => {
-	const { loves, comments } = status.statusCollections;
-	// const [loveReactor, setLoveReactor] = useState('');
+const FeedPostLoveCalculate = ({ status }) => {
+	const { loves } = status.statusCollections;
 	const { user } = useAuth();
 
-	console.log(user);
-
-
-	const handleAddLoveReact = () => {
-
-		const findUserEmail = loves.find(userEmail => userEmail === user?.email);
+	const findUserEmail = loves.find(userEmail => userEmail === user?.email);
+	const handleToggleLoveReact = () => {
 
 		if (!findUserEmail) {
 
 			loves.push(user?.email);
-		}
-
-		if (findUserEmail) {
+		} else {
 			const loverIndex = loves.indexOf(findUserEmail);
 			loves.splice(loverIndex, 1);
 		}
@@ -44,7 +37,7 @@ const FeedPostLoveCalculate = ({ status, dbUsers }) => {
 				// console.log(data);
 			});
 
-		alert("Loved This Post!");
+		// alert("Loved This Post!");
 	}
 
 	return (
@@ -52,8 +45,9 @@ const FeedPostLoveCalculate = ({ status, dbUsers }) => {
 		<IconButton aria-label="Loves">
 			<Badge badgeContent={loves?.length} color="secondary">
 
-				<FavoriteIcon onClick={handleAddLoveReact} />
-				{/* <FavoriteIcon onClick={handleAddLoveReact} sx={{ color: 'crimson' }} /> */}
+				{
+					!findUserEmail ? <FavoriteIcon onClick={handleToggleLoveReact} /> : <FavoriteIcon onClick={handleToggleLoveReact} sx={{ color: 'crimson' }} />
+				}
 
 			</Badge>
 		</IconButton>

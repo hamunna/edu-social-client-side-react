@@ -105,7 +105,7 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 
 			<CardActions disableSpacing>
 
-				<FeedPostLoveCalculate status={status} dbUsers={dbUsers} />
+				<FeedPostLoveCalculate status={status} />
 
 				<ExpandMore
 					expand={expanded}
