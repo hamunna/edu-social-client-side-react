@@ -15,6 +15,7 @@ import { Badge, Button, Card, ImageList, ImageListItem, ListItem, ListItemAvatar
 import { Box } from '@mui/system';
 import FeedPostCommentInputBox from '../FeedPostCommentInputBox/FeedPostCommentInputBox';
 import FeedPostLoveCalculate from '../FeedPostLoveCalculate/FeedPostLoveCalculate';
+import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
 	const { expand, ...other } = props;
@@ -46,6 +47,12 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 	};
 
 
+	const linkStyle = {
+		textDecoration: 'none',
+		color: '#000',
+		fontWeight: 700,
+	}
+
 	return (
 		<Card sx={{ backgroundColor: '#fff', borderRadius: 2, p: 1, mb: 4 }}>
 
@@ -66,6 +73,7 @@ const FeedSingleStatusBox = ({ status, dbUsers }) => {
 				}
 				title={`${dbUserData?.basicInfo?.firstName} ${dbUserData?.basicInfo?.lastName}`}
 				subheader="September 14, 2021"
+				style={linkStyle} as={Link} to={`/userProfile/${dbUserData?._id}`}
 			/>
 
 			<CardContent>
