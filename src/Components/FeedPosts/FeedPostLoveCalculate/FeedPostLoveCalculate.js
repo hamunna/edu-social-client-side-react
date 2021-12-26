@@ -52,7 +52,7 @@ BootstrapDialogTitle.propTypes = {
 
 
 const FeedPostLoveCalculate = ({ status }) => {
-	const { loves } = status.statusCollections;
+	const { loves } = status?.statusCollections;
 	const { user } = useAuth();
 
 	const [open, setOpen] = React.useState(false);
@@ -65,15 +65,15 @@ const FeedPostLoveCalculate = ({ status }) => {
 	};
 
 	// Send Love to Database & Handle Toggle Love React
-	const findUserEmail = loves.find(userEmail => userEmail === user?.email);
+	const findUserEmail = loves?.find(userEmail => userEmail === user?.email);
 	const handleToggleLoveReact = () => {
 
 		if (!findUserEmail) {
 
 			loves.push(user?.email);
 		} else {
-			const loverIndex = loves.indexOf(findUserEmail);
-			loves.splice(loverIndex, 1);
+			const loverIndex = loves?.indexOf(findUserEmail);
+			loves?.splice(loverIndex, 1);
 		}
 
 		console.log("Loves: ", loves)

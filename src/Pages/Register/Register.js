@@ -123,7 +123,7 @@ const Register = () => {
 		setGender(event.target.value);
 	};
 
-	// Handling Gender
+	// Handling City
 	const handleCityChange = (event) => {
 		setCity(event.target.value);
 	};

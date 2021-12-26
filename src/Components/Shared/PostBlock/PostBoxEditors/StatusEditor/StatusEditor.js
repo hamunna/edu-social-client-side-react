@@ -8,7 +8,7 @@ const initializeStatusData = {
 	statusText: "",
 	statusImages: [],
 	statusCollections: {
-		loves: 0,
+		loves: [],
 		comments: []
 	}
 }

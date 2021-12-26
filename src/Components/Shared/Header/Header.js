@@ -23,6 +23,7 @@ import { Link, NavLink } from 'react-router-dom';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 
 // Search Functionalities
 const Search = styled('div')(({ theme }) => ({
@@ -72,15 +73,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Header = () => {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-	const { user, logOut } = useFirebase();
+	const { user, logOut } = useAuth();
 
 	const [dbUsers, setDbUsers] = useState([]);
+	const [dbFoundUser, setDbFoundUser] = useState([]);
 
 	useEffect(() => {
 		fetch("http://localhost:5000/users")
 			.then(res => res.json())
 			.then(data => setDbUsers(data));
 	}, []);
+
+	// Find currenct user data
+	useEffect(() => {
+		const findUser = dbUsers.find(dbUser => dbUser?.email === user?.email);
+		setDbFoundUser(findUser);
+	}, [dbUsers])
 
 
 	// const dbUser = dbUsers.map(dbUser => dbUser)
@@ -372,7 +380,13 @@ const Header = () => {
 							onClick={handleProfileMenuOpen}
 							color="inherit"
 						>
+
+							{/* {
+								dbFoundUser && <img style={{ width: 50, borderRadius: '50%' }} src={dbFoundUser.photoURL} alt="" /> : <AccountCircle />
+							} */}
+
 							<AccountCircle />
+
 						</IconButton>
 					</Box>
 

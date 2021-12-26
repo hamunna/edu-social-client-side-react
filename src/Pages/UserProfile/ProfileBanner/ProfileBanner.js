@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import { SocialIcon } from 'react-social-icons';
 import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MakeFriend from '../../../Components/Friendship/MakeFriend/MakeFriend';
 
 
 
@@ -74,10 +75,17 @@ const ProfileBanner = ({ user }) => {
 
 			</ListItem>
 
-			<Box sx={{ color: "#fff", display: 'flex', fontWeight: '300' }}>
-				<Typography sx={{ width: '130px' }}>Posts: 26</Typography>
-				<Typography sx={{ width: '130px' }}>Comments: 87</Typography>
-				<Typography sx={{ width: '130px' }}>Projects: 7</Typography>
+			<Box>
+				<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 5 }}>
+					<MakeFriend userRequestedTo={user} />
+					<Button className="theme-primary-btn" sx={{px: '3vw'}}>Follow Me</Button>
+				</Box>
+
+				<Box sx={{ color: "#fff", display: 'flex', fontWeight: '300' }}>
+					<Typography sx={{ width: '130px' }}>Posts: 26</Typography>
+					<Typography sx={{ width: '130px' }}>Comments: 87</Typography>
+					<Typography sx={{ width: '130px' }}>Projects: 7</Typography>
+				</Box>
 			</Box>
 		</Box>
 	);
