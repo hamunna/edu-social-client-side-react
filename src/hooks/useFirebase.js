@@ -68,7 +68,7 @@ const useFirebase = () => {
 	// Save Registered User Data to Database
 	const saveUser = (newUser) => {
 		// const user = newUser;
-		fetch('http://localhost:5000/users', {
+		fetch('https://warm-basin-63118.herokuapp.com/users', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

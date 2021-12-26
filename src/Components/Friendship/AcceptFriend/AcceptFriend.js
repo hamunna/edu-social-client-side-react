@@ -1,10 +1,9 @@
+import { Button } from '@mui/material';
 import React from 'react';
 
 const AcceptFriend = () => {
 	return (
-		<div>
-			Accept Friend
-		</div>
+		<Button className="theme-primary-btn" sx={{ px: '3vw' }} >Accept Request</Button>
 	);
 };
 

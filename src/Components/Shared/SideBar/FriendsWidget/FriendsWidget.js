@@ -8,7 +8,7 @@ const FriendsWidget = () => {
 	const [friends, setFriends] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/users")
+		fetch("https://warm-basin-63118.herokuapp.com/users")
 			.then(res => res.json())
 			.then(data => setFriends(data))
 	}, []);

@@ -7,7 +7,7 @@ const ProfileTimelinePosts = ({ user }) => {
 	const [timelinePosts, setTimelinePosts] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/statuses")
+		fetch("https://warm-basin-63118.herokuapp.com/statuses")
 			.then(res => res.json())
 			.then(data => setTimelinePosts(data));
 	}, []);

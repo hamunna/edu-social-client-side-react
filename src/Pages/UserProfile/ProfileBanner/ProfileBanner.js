@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Box } from '@mui/system';
 import { SocialIcon } from 'react-social-icons';
 import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MakeFriend from '../../../Components/Friendship/MakeFriend/MakeFriend';
+import AcceptFriend from '../../../Components/Friendship/AcceptFriend/AcceptFriend';
+import useAuth from '../../../hooks/useAuth';
 
 
 
@@ -22,13 +24,28 @@ import MakeFriend from '../../../Components/Friendship/MakeFriend/MakeFriend';
 // 	alignItems: 'end',
 // }
 
-const ProfileBanner = ({ user }) => {
+// Checking isUserIncludes
 
+const ProfileBanner = ({ dbUserCollection }) => {
+	const [dbUsers, setDbUsers] = useState([]);
+	const { user } = useAuth();
+
+	useEffect(() => {
+		fetch('https://warm-basin-63118.herokuapp.com/users')
+			.then(res => res.json())
+			.then(data => setDbUsers(data));
+	}, []);
+	
 	// const { photoURL, basicInfo, contactInfo, bannerImageURL } = user;
+	const compareCurrentUser = dbUsers?.find(dbUser => dbUser?.email === user?.email);
+	console.log(compareCurrentUser);
+	
+	const isUserIncludes = dbUserCollection?.activityData?.pendingFriendRequests?.includes(compareCurrentUser?.email);
+	console.log(isUserIncludes);
 
 	return (
 		<Box sx={{
-			backgroundImage: `url(${user?.bannerImageURL})`,
+			backgroundImage: `url(${dbUserCollection?.bannerImageURL})`,
 			backgroundRepeat: 'no-repeat',
 			backgroundSize: 'cover',
 			height: '420px',
@@ -46,23 +63,23 @@ const ProfileBanner = ({ user }) => {
 				<ListItemAvatar sx={{ mr: 2 }}>
 					<Avatar
 						alt=""
-						src={user?.photoURL}
+						src={dbUserCollection?.photoURL}
 						sx={{ width: 130, height: 130, border: '2px solid #ccc' }}
 					/>
 				</ListItemAvatar>
 
 				<Box>
-					<Typography sx={{ fontSize: 26, fontWeight: 500, color: '#fff', mb: 0 }}>{`${user?.basicInfo?.firstName} ${user?.basicInfo?.lastName}`}</Typography>
+					<Typography sx={{ fontSize: 26, fontWeight: 500, color: '#fff', mb: 0 }}>{`${dbUserCollection?.basicInfo?.firstName} ${dbUserCollection?.basicInfo?.lastName}`}</Typography>
 
 					<Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
 						<LocationOnIcon sx={{ color: '#fff' }} />
-						<Typography sx={{ fontSize: 16, fontWeight: 300, color: '#fff', mt: 0 }}>{`${user?.contactInfo?.address?.city}, ${user?.contactInfo?.address?.country}`}</Typography>
+						<Typography sx={{ fontSize: 16, fontWeight: 300, color: '#fff', mt: 0 }}>{`${dbUserCollection?.contactInfo?.address?.city}, ${dbUserCollection?.contactInfo?.address?.country}`}</Typography>
 					</Box>
 
 					<Box sx={{ marginTop: '30px' }}>
 
 						{
-							user?.contactInfo?.socialSites.map(socialSite => <SocialIcon
+							dbUserCollection?.contactInfo?.socialSites.map(socialSite => <SocialIcon
 								key={socialSite?.link}
 								network={socialSite?.socialSiteName.toLowerCase()}
 								url={socialSite?.link}
@@ -77,7 +94,9 @@ const ProfileBanner = ({ user }) => {
 
 			<Box>
 				<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 5 }}>
-					<MakeFriend userRequestedTo={user} />
+					{
+						!isUserIncludes ? <MakeFriend userRequestedTo={dbUserCollection} /> : <AcceptFriend />
+					}
 					<Button className="theme-primary-btn" sx={{px: '3vw'}}>Follow Me</Button>
 				</Box>
 

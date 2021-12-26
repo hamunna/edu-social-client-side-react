@@ -79,7 +79,7 @@ const FeedPostLoveCalculate = ({ status }) => {
 		console.log("Loves: ", loves)
 		console.log("User Email: ", user?.email)
 
-		fetch('http://localhost:5000/statuses/love', {
+		fetch('https://warm-basin-63118.herokuapp.com/statuses/love', {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'

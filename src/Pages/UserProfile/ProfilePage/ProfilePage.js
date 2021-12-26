@@ -13,7 +13,7 @@ const ProfilePage = () => {
 
 
 	useEffect(() => {
-		fetch("http://localhost:5000/users")
+		fetch("https://warm-basin-63118.herokuapp.com/users")
 			.then(res => res.json())
 			.then(data => setDbUsers(data));
 	}, []);
@@ -35,7 +35,7 @@ const ProfilePage = () => {
 					// key={dbUserCollection?._id}
 				>
 					<ProfileBanner
-						user={dbUserCollection}
+						dbUserCollection={dbUserCollection}
 					/>
 					<ProfileTabs
 						user={dbUserCollection}

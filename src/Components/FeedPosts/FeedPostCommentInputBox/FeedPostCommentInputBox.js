@@ -89,7 +89,7 @@ const FeedPostCommentInputBox = ({ status, handleExpandClick }) => {
 
 		// console.log(statusUpdate);
 
-		fetch('http://localhost:5000/statuses/comment', {
+		fetch('https://warm-basin-63118.herokuapp.com/statuses/comment', {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'

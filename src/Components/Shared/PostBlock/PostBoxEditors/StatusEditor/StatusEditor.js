@@ -38,7 +38,7 @@ const StatusEditor = () => {
 
 
 	const sendStatus = (statusData) => {
-		fetch('http://localhost:5000/statuses', {
+		fetch('https://warm-basin-63118.herokuapp.com/statuses', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

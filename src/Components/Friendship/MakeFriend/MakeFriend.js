@@ -12,22 +12,19 @@ const MakeFriend = ({ userRequestedTo }) => {
 	console.log(user.email); // got user
 
 	useEffect(() => {
-		fetch('http://localhost:5000/users')
+		fetch('https://warm-basin-63118.herokuapp.com/users')
 			.then(res => res.json())
 			.then(data => setUsersCollection(data));
 	}, []);
 
-	// Sending Data to the Database
-	const findSenderEmailInReceiver = userRequestedTo?.activityData?.pendingFriendRequests?.includes(user?.email);
-
-	console.log(findSenderEmailInReceiver);
-
-	const handleFrReqToSubmit = () => {
-		if (!findSenderEmailInReceiver) {
+	// Updating FrReqSender data on the Database
+	const findReceiverEmailInReceiver = userRequestedTo?.activityData?.pendingFriendRequests?.includes(user?.email);
+	const handleFrReqFromSubmit = () => {
+		if (!findReceiverEmailInReceiver) {
 			userRequestedTo?.activityData?.pendingFriendRequests?.push(user?.email);
 		}
 
-		fetch('http://localhost:5000/users/frReqTo', {
+		fetch('https://warm-basin-63118.herokuapp.com/users/frReqFrom', {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'
@@ -36,7 +33,30 @@ const MakeFriend = ({ userRequestedTo }) => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+				// console.log(data);
+			});
+
+		alert("Request send successfully!");
+	}
+	
+
+	// Sending Data to the Database
+	const findSenderEmailInReceiver = userRequestedTo?.activityData?.pendingFriendRequests?.includes(user?.email);
+	const handleFrReqToSubmit = () => {
+		if (!findSenderEmailInReceiver) {
+			userRequestedTo?.activityData?.pendingFriendRequests?.push(user?.email);
+		}
+
+		fetch('https://warm-basin-63118.herokuapp.com/users/frReqTo', {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(userRequestedTo)
+		})
+			.then(res => res.json())
+			.then(data => {
+				// console.log(data);
 			});
 
 		alert("Request send successfully!");

@@ -5,7 +5,7 @@ const FeedStatusBoxes = ({ dbUsers }) => {
 	const [statuses, setStatuses] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/statuses")
+		fetch("https://warm-basin-63118.herokuapp.com/statuses")
 			.then(res => res.json())
 			.then(data => setStatuses(data));
 	}, []);
