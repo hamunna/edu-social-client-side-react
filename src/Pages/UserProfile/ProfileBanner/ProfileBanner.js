@@ -6,6 +6,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MakeFriend from '../../../Components/Friendship/MakeFriend/MakeFriend';
 import AcceptFriend from '../../../Components/Friendship/AcceptFriend/AcceptFriend';
 import useAuth from '../../../hooks/useAuth';
+import PendingFriend from '../../../Components/Friendship/PendingFriend/PendingFriend';
 
 
 
@@ -38,10 +39,12 @@ const ProfileBanner = ({ dbUserCollection, ownProfile }) => {
 
 	// const { photoURL, basicInfo, contactInfo, bannerImageURL } = user;
 	const compareCurrentUser = dbUsers?.find(dbUser => dbUser?.email === user?.email);
-	// console.log(compareCurrentUser);
+	console.log(compareCurrentUser);
 
-	const isUserIncludes = dbUserCollection?.activityData?.pendingFriendRequests?.includes(compareCurrentUser?.email);
-	// console.log(isUserIncludes);
+	const isPendingReq = dbUserCollection?.activityData?.pendingFriendRequests?.includes(compareCurrentUser?.email);
+
+	const isAcceptReq = dbUserCollection?.activityData?.sentFriendRequests?.includes(compareCurrentUser?.email);
+	console.log(isPendingReq);
 
 	return (
 		<Box sx={{
@@ -95,14 +98,21 @@ const ProfileBanner = ({ dbUserCollection, ownProfile }) => {
 			<Box>
 				<Box>
 					{
-						!ownProfile && !isUserIncludes && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
+						!ownProfile && !isPendingReq && !isAcceptReq && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
 							<MakeFriend userRequestedTo={dbUserCollection} />
 							<Button className="theme-fr-btn" sx={{ px: '3vw' }}>Follow Me</Button>
 						</Box>
 					}
 
 					{
-						!ownProfile && isUserIncludes && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
+						!ownProfile && isPendingReq && !isAcceptReq && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
+							<PendingFriend />
+							<Button className="theme-fr-btn" sx={{ px: '3vw' }}>Follow Me</Button>
+						</Box>
+					}
+
+					{
+						!ownProfile && !isPendingReq && isAcceptReq && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
 							<AcceptFriend />
 							<Button className="theme-fr-btn" sx={{ px: '3vw' }}>Follow Me</Button>
 						</Box>

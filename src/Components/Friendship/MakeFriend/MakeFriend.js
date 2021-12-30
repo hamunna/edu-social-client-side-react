@@ -42,23 +42,23 @@ const MakeFriend = ({ userRequestedTo }) => {
 
 	// Updating FrReqSender data on the Database
 	useEffect(() => {
-		const findCurrentUser = usersCollection.find(currentUser => currentUser?.email === user?.email);
+		const findCurrentUser = usersCollection.find(currentUser => user?.email === currentUser?.email);
 		setCurrentUser(findCurrentUser);
 		// console.log(findCurrentUser);
-	},[user?.email])
+	}, [user])
 	// console.log(currentUser);		
-	
+
 	const findReceiverEmailInSender = currentUser?.activityData?.sentFriendRequests?.includes(userRequestedTo?.email);
-	console.log(currentUser)
-	console.log(findReceiverEmailInSender);
+	// console.log(currentUser)
+	// console.log(findReceiverEmailInSender);
 
 	const handleSentFrReq = () => {
 		if (!findReceiverEmailInSender) {
 			currentUser?.activityData?.sentFriendRequests?.push(userRequestedTo?.email);
 		}
 
-		fetch('https://warm-basin-63118.herokuapp.com/users/frReqFrom', {
-		// fetch('http://localhost:5000/users/frReqFrom', {
+		// fetch('https://warm-basin-63118.herokuapp.com/users/frReqFrom', {
+			fetch('http://localhost:5000/users/frReqTo', {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'
@@ -69,7 +69,7 @@ const MakeFriend = ({ userRequestedTo }) => {
 			.then(data => {
 				// console.log(data);
 			});
-		
+
 	}
 
 	// Handle Submit Friend Request
@@ -82,6 +82,7 @@ const MakeFriend = ({ userRequestedTo }) => {
 
 
 	return (
+
 		<Button className="theme-fr-btn" sx={{ px: '3vw' }} onClick={handleSubmitFriendRequest}>Make Friend</Button>
 	);
 };
