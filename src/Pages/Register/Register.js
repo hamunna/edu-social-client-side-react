@@ -53,6 +53,7 @@ const initialDbUserData = {
 	activityData: {
 		friends: [],
 		pendingFriendRequests: [],
+		sentFriendRequests: [],
 		following: [],
 		followers: [],
 		groups: [],
@@ -92,11 +93,11 @@ const Register = () => {
 
 		if (field === 'city') {
 			newRegisterData.contactInfo.address[field] = value;
-			
+
 		}
 
 		if (field === "email" || field === "photoURL" || field === "bannerImageURL" || field === "password") {
-			
+
 			newRegisterData[field] = value;
 		}
 

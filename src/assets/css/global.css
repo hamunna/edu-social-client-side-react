@@ -80,6 +80,18 @@ body {
 	background-color: var(--tpdc) !important;
 }
 
+.theme-fr-btn {
+	background-color: var(--tpdc) !important;
+	font-family: var(--tpff) !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	font-family: 'Roboto' !important;
+}
+
+.theme-fr-btn:hover {
+	background-color: var(--tplc) !important;
+}
+
 .loginBtn {
 	margin: 20px 0 !important;
 	width: 100%;

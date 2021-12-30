@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/system';
 import { SocialIcon } from 'react-social-icons';
 import { Avatar, Button, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
@@ -26,7 +26,7 @@ import useAuth from '../../../hooks/useAuth';
 
 // Checking isUserIncludes
 
-const ProfileBanner = ({ dbUserCollection }) => {
+const ProfileBanner = ({ dbUserCollection, ownProfile }) => {
 	const [dbUsers, setDbUsers] = useState([]);
 	const { user } = useAuth();
 
@@ -35,13 +35,13 @@ const ProfileBanner = ({ dbUserCollection }) => {
 			.then(res => res.json())
 			.then(data => setDbUsers(data));
 	}, []);
-	
+
 	// const { photoURL, basicInfo, contactInfo, bannerImageURL } = user;
 	const compareCurrentUser = dbUsers?.find(dbUser => dbUser?.email === user?.email);
-	console.log(compareCurrentUser);
-	
+	// console.log(compareCurrentUser);
+
 	const isUserIncludes = dbUserCollection?.activityData?.pendingFriendRequests?.includes(compareCurrentUser?.email);
-	console.log(isUserIncludes);
+	// console.log(isUserIncludes);
 
 	return (
 		<Box sx={{
@@ -93,11 +93,20 @@ const ProfileBanner = ({ dbUserCollection }) => {
 			</ListItem>
 
 			<Box>
-				<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 5 }}>
+				<Box>
 					{
-						!isUserIncludes ? <MakeFriend userRequestedTo={dbUserCollection} /> : <AcceptFriend />
+						!ownProfile && !isUserIncludes && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
+							<MakeFriend userRequestedTo={dbUserCollection} />
+							<Button className="theme-fr-btn" sx={{ px: '3vw' }}>Follow Me</Button>
+						</Box>
 					}
-					<Button className="theme-primary-btn" sx={{px: '3vw'}}>Follow Me</Button>
+
+					{
+						!ownProfile && isUserIncludes && <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mb: 5 }}>
+							<AcceptFriend />
+							<Button className="theme-fr-btn" sx={{ px: '3vw' }}>Follow Me</Button>
+						</Box>
+					}
 				</Box>
 
 				<Box sx={{ color: "#fff", display: 'flex', fontWeight: '300' }}>

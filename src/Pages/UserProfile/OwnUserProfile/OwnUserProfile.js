@@ -35,7 +35,8 @@ const OwnUserProfile = () => {
 					// key={dbUserCollection?._id}
 				>
 					<ProfileBanner
-						user={dbUserCollection}
+						dbUserCollection={dbUserCollection}
+						ownProfile={true}
 					/>
 					<ProfileTabs
 						user={dbUserCollection}

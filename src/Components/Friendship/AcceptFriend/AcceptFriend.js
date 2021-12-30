@@ -3,7 +3,7 @@ import React from 'react';
 
 const AcceptFriend = () => {
 	return (
-		<Button className="theme-primary-btn" sx={{ px: '3vw' }} >Accept Request</Button>
+		<Button className="theme-fr-btn" sx={{ px: '3vw' }} >Accept Request</Button>
 	);
 };
 
