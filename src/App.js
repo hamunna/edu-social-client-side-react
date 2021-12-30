@@ -14,6 +14,7 @@ import AuthProvider from './context/AuthProvider';
 import OwnUserProfile from './Pages/UserProfile/OwnUserProfile/OwnUserProfile';
 import { UserProvider } from './context/UserProvider';
 import { useEffect, useState } from 'react';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   const [dbUsers, setDbUsers] = useState([]);
@@ -34,15 +35,17 @@ function App() {
           {/* <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} /> */}
 
-          <Route path="/" element={<Home dbUsers={dbUsers} />} />
+          <Route path="/" element={<PrivateRoute><Home dbUsers={dbUsers} /></PrivateRoute>} />
 
-          <Route path="/myProfile/:userId" element={<OwnUserProfile />} />
+          <Route path="/myProfile/:userId" element={<PrivateRoute><OwnUserProfile /></PrivateRoute>} />
 
-          <Route path="/userProfile/:userId" element={<ProfilePage dbUsers={dbUsers} />} />
+          <Route path="/userProfile/:userId" element={<PrivateRoute><ProfilePage dbUsers={dbUsers} /></PrivateRoute>} />
 
           <Route path="/login" element={<Login />} />
 
           <Route path="/register" element={<Register />} />
+
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
       </Router>

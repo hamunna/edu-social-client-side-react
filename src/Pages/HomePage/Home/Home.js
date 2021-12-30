@@ -10,7 +10,7 @@ const Home = ({ dbUsers }) => {
 		<>
 			<Header />
 			<Container>
-				<Box sx={{ mt: 30 }} display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={-1}>
+				<Box sx={{ mt: 10 }} display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={-1}>
 
 
 					{/* Left & Main Side */}
