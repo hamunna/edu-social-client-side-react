@@ -1,201 +1,441 @@
 [
 	{
 		"_id": {
-			"$oid": "61bed574504cfb480ec22bed"
+			"$oid": "61bed401504cfb480ec17963"
 		},
-		"statusId": "1002",
-		"statusPosterId": "61bed401504cfb480ec17964",
-		"statusPosterEmail": "himu@hm.com",
-		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
-		"statusImages": [
-			"https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821__480.jpg",
-			"https://i.pinimg.com/736x/cf/59/82/cf59821eabc77942bc0100ebfd3551d4.jpg"
-		],
-		"statusCollections": {
-			"loves": [],
-			"comments": [
+		"userId": {
+			"$numberInt": "1"
+		},
+		"photoURL": "https://media-exp1.licdn.com/dms/image/C5603AQGW5cSOakD7lA/profile-displayphoto-shrink_200_200/0/1585925499669?e=1645056000&v=beta&t=GPgR8TfNbIho9wHAls4grb6AIdbM-9w1_FvDGVfDuh4",
+		"bannerImageURL": "https://www.dlapiper.com/~/media/images/news/2018/programming_code_technology_computerwebsite_banner_432008923.jpg",
+		"password": "123456",
+		"basicInfo": {
+			"firstName": "Hossain Ahmad",
+			"lastName": "Munna",
+			"birthDate": "15/01/1998",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "+8801796766896",
+			"website": "www.hamunna.com",
+			"socialSites": [
 				{
-					"userEmail": "tamim@hm.com",
-					"statusCommentText": "will give you a complete account of the system"
+					"socialSiteName": "Facebook",
+					"link": "https://www.facebook.com/hamunna15"
 				},
 				{
-					"userEmail": "juwel@hm.com",
-					"statusCommentText": "Tui Abul"
+					"socialSiteName": "GitHub",
+					"link": "https://www.github.com/hamunna"
 				},
 				{
-					"userEmail": "sachin@hm.com",
-					"statusCommentText": "Dhur Bolod!"
+					"socialSiteName": "LinkedIn",
+					"link": "https://www.linkedin.com/hamunna"
+				},
+				{
+					"socialSiteName": "Youtube",
+					"link": "https://www.youtube.com/channel/UCU8_M6GAuFnjeY2OyeQ7aZw"
 				}
-			]
-		}
-	},
-	{
-		"_id": {
-			"$oid": "61bed574504cfb480ec22bee"
-		},
-		"statusId": "1003",
-		"statusPosterId": "61bed401504cfb480ec17964",
-		"statusPosterEmail": "himu@hm.com",
-		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
-		"statusImages": [],
-		"statusCollections": {
-			"loves": [],
-			"comments": [
-				{
-					"userEmail": "munna@hm.com",
-					"statusCommentText": "Himu vai bala ni?"
-				}
-			]
-		}
-	},
-	{
-		"_id": {
-			"$oid": "61bed574504cfb480ec22bef"
-		},
-		"statusId": "1004",
-		"statusPosterId": "61bed401504cfb480ec17963",
-		"statusPosterEmail": "munna@hm.com",
-		"statusText": "",
-		"statusImages": [
-			"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__480.jpg",
-			"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__480.jpg",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWgtuz67UqT2nscpOIl3txLRTJR2WpZ8WGxur5h529ssyjAQX3g50M8dyqUNzVwlcHq8Y&usqp=CAU",
-			"https://static.scientificamerican.com/sciam/cache/file/C3D6DFBB-92DD-43D0-A9F8CB9AB477F652_source.jpg?w=590&h=800&5F47C5D2-41D8-476F-A29200DA225DCEEA"
-		],
-		"statusCollections": {
-			"loves": [],
-			"comments": [
-				{
-					"userEmail": "himu@hm.com",
-					"statusCommentText": "Very Nice"
-				},
-				{
-					"userEmail": "juwel@hm.com",
-					"statusCommentText": "Wow! Good Idea"
-				}
-			]
-		}
-	},
-	{
-		"_id": {
-			"$oid": "61bed574504cfb480ec22bf0"
-		},
-		"statusId": "1005",
-		"statusPosterId": "61bed401504cfb480ec17965",
-		"statusPosterEmail": "juwel@hm.com",
-		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
-		"statusImages": [
-			"https://doneads.org/wp-content/uploads/2021/10/Online-Courses-1.jpg",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWgtuz67UqT2nscpOIl3txLRTJR2WpZ8WGxur5h529ssyjAQX3g50M8dyqUNzVwlcHq8Y&usqp=CAU",
-			"https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__480.jpg"
-		],
-		"statusCollections": {
-			"loves": [],
-			"comments": [
-				{
-					"userEmail": "munna@hm.com",
-					"statusCommentText": "Very Nice"
-				},
-				{
-					"userEmail": "juwel@hm.com",
-					"statusCommentText": "Wow! Good Idea"
-				}
-			]
-		}
-	},
-	{
-		"_id": {
-			"$oid": "61c2e23aef74d0c2cbb7b5e4"
-		},
-		"statusPosterId": "",
-		"statusPosterEmail": "sachin@hm.com",
-		"statusText": "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence in this spot, which was.\n\nA wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence in this spot, which was.",
-		"statusImages": [],
-		"statusCollections": {
-			"loves": [],
-			"comments": []
-		},
-		"statusUpdate": {
-			"_id": "61c2e23aef74d0c2cbb7b5e4",
-			"statusPosterId": "",
-			"statusPosterEmail": "sachin@hm.com",
-			"statusText": "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence in this spot, which was.\n\nA wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone and feel the charm of existence in this spot, which was.",
-			"statusImages": [],
-			"statusCollections": {
-				"loves": {
-					"$numberInt": "0"
-				},
-				"comments": [
-					{
-						"userEmail": "munna@hm.com",
-						"statusCommentText": "Vai Sachin ebar tham."
-					}
-				]
-			}
-		}
-	},
-	{
-		"_id": {
-			"$oid": "61c2e6f0ef74d0c2cbb7b5e5"
-		},
-		"statusPosterId": "",
-		"statusPosterEmail": "munna@hm.com",
-		"statusText": "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymph.\n\nThe quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymph.\n\nThe quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymph.",
-		"statusImages": [],
-		"statusCollections": {
-			"loves": [],
-			"comments": [
-				{
-					"userEmail": "munna@hm.com",
-					"statusCommentText": "Hablu vi"
-				},
-				{
-					"userEmail": "munna@hm.com",
-					"statusCommentText": "You are the best web developer in the world!"
-				}
-			]
-		}
-	},
-	{
-		"_id": {
-			"$oid": "61c484ad3172b6d1b308f584"
-		},
-		"statusId": "1001",
-		"statusPosterId": "61bed401504cfb480ec17963",
-		"statusPosterEmail": "munna@hm.com",
-		"statusText": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, disloves, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. ",
-		"statusImages": [
-			"https://image.winudf.com/v2/image1/Y29tLm5hdHVyYWxpbWFnZWhkd2FsbHBhcGVyLnJ5cnNfc2NyZWVuXzBfMTU0MjM3MDgxNl8wODU/screen-0.jpg?fakeurl=1&type=.jpg"
-		],
-		"statusCollections": {
-			"loves": [
-				"one",
-				"two",
-				"three",
-				"four",
-				"nine",
-				"ten"
 			],
-			"comments": [
+			"address": {
+				"street": "Gotatikar",
+				"city": "Sylhet",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "The IT Aid",
+				"jobTitle": "Instructor",
+				"startDate": "26/10/19",
+				"endData": "01/11/21"
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [
+				"Cricket",
+				"Football",
+				"Tennis"
+			],
+			"books": [
+				"Connecting the dots",
+				"Rich Dad, Poor Dad"
+			],
+			"programmingTechnologies": [
+				"Javascript",
+				"React.js",
+				"Node.js",
+				"Express.js",
+				"MongoDB"
+			],
+			"hobbies": [
+				"Reading",
+				"Coding",
+				"Swimming"
+			]
+		},
+		"activityData": {
+			"friends": [],
+			"pendingFriendRequests": [
+				"munnasarker@hm.com"
+			],
+			"sentFriendRequests": [],
+			"following": [],
+			"followers": [],
+			"groups": [],
+			"purchaseHistory": [
 				{
-					"userEmail": "sachin@hm.com",
-					"statusCommentText": "Very Nice will give you a complete account of the system"
+					"productId": "123",
+					"productName": "Connecting the dots",
+					"purchasePrice": "76",
+					"purchaseDate": "18/12/21"
+				}
+			]
+		},
+		"email": "munna@hm.com"
+	},
+	{
+		"_id": {
+			"$oid": "61c57efc3172b6d1b3792cbf"
+		},
+		"userId": {
+			"$numberInt": "2"
+		},
+		"photoURL": "https://media-exp1.licdn.com/dms/image/C5603AQHzDN78zsuquQ/profile-displayphoto-shrink_800_800/0/1615499103028?e=1645660800&v=beta&t=NoYAU_R9U0kAe3dL0VRnEM7Vg1PURuRxZw81P-mXud8",
+		"bannerImageURL": "https://cdn.wallpapersafari.com/2/95/OmoCWj.jpg",
+		"password": "123456",
+		"basicInfo": {
+			"firstName": "Abdul Aziz",
+			"lastName": "Himu",
+			"birthDate": "07/03/1993",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "+8801712611101",
+			"website": "www.himu.com",
+			"socialSites": [
+				{
+					"socialSiteName": "Facebook",
+					"link": "https://www.facebook.com/ahimu3"
 				},
 				{
-					"userEmail": "juwel@hm.com",
-					"statusCommentText": "Wow! Good Idea will give you a complete account"
+					"socialSiteName": "Instagram",
+					"link": "https://www.instagram.com/abdulazizhimu/"
 				},
 				{
-					"userEmail": "tamim@hm.com",
-					"statusCommentText": "Very Nice"
-				},
+					"socialSiteName": "LinkedIn",
+					"link": "https://www.linkedin.com/in/abdul-aziz-himu-a6a358209/?originalSubdomain=bd"
+				}
+			],
+			"address": {
+				"street": "Gangpar, Birgoan",
+				"city": "Dhaka",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "Unilever",
+				"jobTitle": "Marketing Executive",
+				"startDate": "01/03/18",
+				"endData": "30/7/20"
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [
+				"Cricket",
+				"Football",
+				"Hadudu"
+			],
+			"books": [
+				"Abong Himu",
+				"Himu Mama"
+			],
+			"programmingTechnologies": [
+				""
+			],
+			"hobbies": [
+				"Sleeping",
+				"Talking",
+				"Swimming"
+			]
+		},
+		"activityData": {
+			"friends": [],
+			"pendingFriendRequests": [],
+			"sentFriendRequests": [],
+			"following": [],
+			"followers": [],
+			"groups": [],
+			"purchaseHistory": [
 				{
-					"userEmail": "himu@hm.com",
-					"statusCommentText": "Wow! Good Idea"
-				},
+					"productId": "123",
+					"productName": "Himu Mama",
+					"purchasePrice": "59",
+					"purchaseDate": "10/12/21"
+				}
+			]
+		},
+		"email": "himu@hm.com"
+	},
+	{
+		"_id": {
+			"$oid": "61bed401504cfb480ec17965"
+		},
+		"userId": {
+			"$numberInt": "3"
+		},
+		"photoURL": "https://scontent.fzyl1-1.fna.fbcdn.net/v/t39.30808-6/269925189_3825057867719512_2666623035122828745_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeExMkO1v4zYPVp_5lUUJkO6rBlALhes-6WsGUAuF6z7pWfJ6eXcrmr1dorTK2jREgT5fxsEPR-nse7-kE61ZBSW&_nc_ohc=nog_k6KUSh4AX_HwI4v&tn=UvV65irlY7P54SJ5&_nc_ht=scontent.fzyl1-1.fna&oh=00_AT8DWjuR_C8a88zvygvDqZLTIWPZvqKz49nyRRkTsyQ32A&oe=61CD22C2",
+		"bannerImageURL": "https://scontent.fzyl1-1.fna.fbcdn.net/v/t1.6435-9/71209696_3033891390169501_9129351582087905280_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeFtGC7tWQ8Wajkgt-iWIHAiOYBTHxnPHKA5gFMfGc8coPxK3blnCmwHqyqzfRu_78Z2pbPoTqaUbTvZpwrJNI92&_nc_ohc=3MxeVdx1Ux0AX-V88wR&_nc_ht=scontent.fzyl1-1.fna&oh=00_AT84NSoNEkAIkjbBahDM3lU3jw_qfaPhiNis0YFa9N1YnA&oe=61E272AF",
+		"password": "123456",
+		"basicInfo": {
+			"firstName": "Juwel",
+			"lastName": "Hussen",
+			"birthDate": "10/03/1994",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "+8801765354545",
+			"website": "www.Juwel.com",
+			"socialSites": [
 				{
-					"userEmail": "munna@hm.com",
-					"statusCommentText": "Good night everybody."
+					"socialSiteName": "Facebook",
+					"link": "https://www.facebook.com/juayel.hussen"
+				}
+			],
+			"address": {
+				"street": "Ekorchoi, Jagannathpur",
+				"city": "Sylhet",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "Bangladesh Chatro league",
+				"jobTitle": "Organizational Secretary",
+				"startDate": "01/12/21",
+				"endData": "Running..."
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [
+				"Football",
+				"Cricket",
+				"Mini Football"
+			],
+			"books": [
+				"Bangla Shohoj Path",
+				"English Grammar"
+			],
+			"programmingTechnologies": [
+				""
+			],
+			"hobbies": [
+				"Speaking",
+				"Playing",
+				"Politics"
+			]
+		},
+		"activityData": {
+			"friends": [],
+			"pendingFriendRequests": [
+				"munnasarker@hm.com",
+				"munna@hm.com"
+			],
+			"sentFriendRequests": [],
+			"following": [],
+			"followers": [],
+			"groups": [],
+			"purchaseHistory": [
+				{
+					"productId": "123",
+					"productName": "English Grammar",
+					"purchasePrice": "45",
+					"purchaseDate": "22/11/21"
+				}
+			]
+		},
+		"email": "juwel@hm.com"
+	},
+	{
+		"_id": {
+			"$oid": "61c17fa0fc8e8b38aae7df9e"
+		},
+		"email": "tamim@hm.com",
+		"password": "123456",
+		"photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrnDPLxk68xovFp4kJJZDt0Vx3OIAatkyIvYqiSDrmp6Qf8h8QPplwl11rUD25v52NhxI&usqp=CAU",
+		"bannerImageURL": "https://img.cricketworld.com/images/f-060998/tamim-iqbal-4.jpg",
+		"basicInfo": {
+			"firstName": "Tamim",
+			"lastName": "Iqbal",
+			"birthDate": "15/05/1988",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "",
+			"website": "",
+			"socialSites": [
+				{
+					"socialSiteName": "",
+					"link": ""
+				}
+			],
+			"address": {
+				"street": "",
+				"city": "Chattagram",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "",
+				"jobTitle": "",
+				"startDate": "",
+				"endData": ""
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [],
+			"books": [],
+			"programmingTechnologies": [],
+			"hobbies": []
+		},
+		"activityData": {
+			"friends": [],
+			"pendingFriendRequests": [
+				"munna@hm.com"
+			],
+			"sentFriendRequests": [],
+			"following": [],
+			"followers": [],
+			"groups": [],
+			"purchaseHistory": [
+				{
+					"productId": "",
+					"productName": "",
+					"purchasePrice": "",
+					"purchaseDate": ""
+				}
+			]
+		}
+	},
+	{
+		"_id": {
+			"$oid": "61c196a7fc8e8b38aae7df9f"
+		},
+		"email": "sachin@hm.com",
+		"password": "123456",
+		"photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGhcePIuEaFZSh7qUM9shszh0aeMClaFwB5bIoJ_UhIL2oYGpvxER6HR0FJzu1LlMJUEk&usqp=CAU",
+		"bannerImageURL": "https://ca-times.brightspotcdn.com/dims4/default/3e0539d/2147483647/strip/true/crop/600x338+0+17/resize/1200x675!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F80%2Fa5%2F9430db0c780d9a2b22fc99aec2c6%2Fla-xpm-photo-2013-oct-10-la-fg-wn-india-cricket-sachin-tendulkar-20131010",
+		"basicInfo": {
+			"firstName": "Sachin",
+			"lastName": "Tendulkar",
+			"birthDate": "24/04/1973",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "",
+			"website": "",
+			"socialSites": [
+				{
+					"socialSiteName": "",
+					"link": ""
+				}
+			],
+			"address": {
+				"street": "",
+				"city": "Rajshahi",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "",
+				"jobTitle": "",
+				"startDate": "",
+				"endData": ""
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [],
+			"books": [],
+			"programmingTechnologies": [],
+			"hobbies": []
+		},
+		"activityData": {
+			"friends": [],
+			"pendingFriendRequests": [],
+			"sentFriendRequests": [],
+			"following": [],
+			"followers": [],
+			"groups": [],
+			"purchaseHistory": [
+				{
+					"productId": "",
+					"productName": "",
+					"purchasePrice": "",
+					"purchaseDate": ""
+				}
+			]
+		}
+	},
+	{
+		"_id": {
+			"$oid": "61c62d0d577048743d7d2055"
+		},
+		"email": "munnasarker@hm.com",
+		"password": "123456",
+		"photoURL": "https://scontent.fzyl1-1.fna.fbcdn.net/v/t1.6435-9/91874756_2812811462141654_947520577780842496_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGrLxDYT7XS9k2GhFFrgXTtfOJS5xYhX7584lLnFiFfvsDl2M5MTxcCvkO3O4EdduUG6tvynQqvjKbICqeWnyHJ&_nc_ohc=TkwahIRCRd8AX9-7nbQ&_nc_ht=scontent.fzyl1-1.fna&oh=00_AT9HztLVWalch24Ucb-j5OkAqdB_OP-CaF0OE-8eUXnFww&oe=61EA8FCA",
+		"bannerImageURL": "https://scontent.fzyl1-1.fna.fbcdn.net/v/t39.30808-6/259265258_4472360929520024_6046304972403555832_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeECm3Cnv0PUU31B_GLsXy9MNPux6zlAvdg0-7HrOUC92LeG8_02Ya0O1aBIKP9MT601AeIPVBnK-tkDmaQmy31_&_nc_ohc=4DGwYJLjNgMAX8sp1I2&_nc_ht=scontent.fzyl1-1.fna&oh=00_AT_UcpAapvbb113Smxd4gO44HChrU-CmPfYIvQACVuM_cg&oe=61CA735D",
+		"basicInfo": {
+			"firstName": "MD Munna",
+			"lastName": "Sarker",
+			"birthDate": "10/03/1994",
+			"gender": "Male"
+		},
+		"contactInfo": {
+			"phone": "",
+			"website": "",
+			"socialSites": [
+				{
+					"socialSiteName": "",
+					"link": ""
+				}
+			],
+			"address": {
+				"street": "",
+				"city": "Mymensingh",
+				"country": "Bangladesh"
+			}
+		},
+		"workExperience": [
+			{
+				"companyName": "",
+				"jobTitle": "",
+				"startDate": "",
+				"endData": ""
+			}
+		],
+		"hobbiesInterests": {
+			"sports": [],
+			"books": [],
+			"programmingTechnologies": [],
+			"hobbies": []
+		},
+		"activityData": {
+			"friends": [],
+			"pendingFriendRequests": [
+				"munna@hm.com"
+			],
+			"sentFriendRequests": [],
+			"following": [],
+			"followers": [],
+			"groups": [],
+			"purchaseHistory": [
+				{
+					"productId": "",
+					"productName": "",
+					"purchasePrice": "",
+					"purchaseDate": ""
 				}
 			]
 		}

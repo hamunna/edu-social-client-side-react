@@ -41,24 +41,22 @@ const MakeFriend = ({ userRequestedTo }) => {
 	}
 
 	// Updating FrReqSender data on the Database
+
 	useEffect(() => {
 		const findCurrentUser = usersCollection.find(currentUser => user?.email === currentUser?.email);
 		setCurrentUser(findCurrentUser);
-		// console.log(findCurrentUser);
-	}, [user])
-	// console.log(currentUser);		
+	}, [user?.email])
 
 	const findReceiverEmailInSender = currentUser?.activityData?.sentFriendRequests?.includes(userRequestedTo?.email);
-	// console.log(currentUser)
-	// console.log(findReceiverEmailInSender);
-
+	
 	const handleSentFrReq = () => {
+		
 		if (!findReceiverEmailInSender) {
 			currentUser?.activityData?.sentFriendRequests?.push(userRequestedTo?.email);
 		}
 
-		// fetch('https://warm-basin-63118.herokuapp.com/users/frReqFrom', {
-			fetch('http://localhost:5000/users/frReqTo', {
+		fetch('https://warm-basin-63118.herokuapp.com/users/frReqFrom', {
+		// fetch('http://localhost:5000/users/frReqFrom', {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'

@@ -130,8 +130,8 @@ const Header = () => {
 			open={isMenuOpen}
 			onClose={handleMenuClose}
 		>
-			<MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-			<MenuItem onClick={handleMenuClose}>My account</MenuItem>
+			{/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+			<MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
 		</Menu>
 	);
 
@@ -355,7 +355,7 @@ const Header = () => {
 
 					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
-						<IconButton size="large" aria-label="show 4 new mails" color="inherit">
+						{/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
 							<Badge badgeContent={4} color="error">
 								<MailIcon />
 							</Badge>
@@ -370,24 +370,27 @@ const Header = () => {
 							<Badge badgeContent={17} color="error">
 								<NotificationsIcon />
 							</Badge>
-						</IconButton>
-						<IconButton
-							size="large"
-							// edge="end"
-							aria-label="account of current user"
-							aria-controls={menuId}
-							aria-haspopup="true"
-							onClick={handleProfileMenuOpen}
-							color="inherit"
-						>
+						</IconButton> */}
 
-							{/* {
-								dbFoundUser && <img style={{ width: 50, borderRadius: '50%' }} src={dbFoundUser.photoURL} alt="" /> : <AccountCircle />
-							} */}
+						{
+							dbUsers.map(dbUser => user?.email === dbUser?.email && <IconButton
+								// size="large"
+								style={linkStyle} as={Link}
+								to={`/myProfile/${dbUser._id}`}
+								button
+							>
 
-							<AccountCircle />
 
-						</IconButton>
+									{
+										dbFoundUser ? <img style={{ width: 50, borderRadius: '50%' }} src={dbFoundUser.photoURL} alt="" /> : <AccountCircle />
+									}
+
+
+
+
+							</IconButton>
+							)
+						}
 					</Box>
 
 					<Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -418,7 +421,7 @@ const Header = () => {
 			</AppBar>
 			{renderMobileMenu}
 			{renderMenu}
-		</Box>
+		</Box >
 	);
 };
 
